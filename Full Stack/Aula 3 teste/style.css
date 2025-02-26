@@ -1,0 +1,18 @@
+.texto5g{
+    color: rgb(162, 0, 255);
+}
+#textotecnologia{
+    position: absolute;
+    top: 80px;
+    left: 20px;
+}
+body{
+    background-color: rgba(243, 176, 94, 0.815);
+}
+div{
+    font-size: 20px;
+    padding: 80px;
+}
+.imagem1{
+    top: 0px;
+}
