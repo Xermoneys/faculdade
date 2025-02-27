@@ -48,7 +48,7 @@ img#java{
 .Livros{
     position: relative;
     top: 70px;
-    left: 45%;
+    left: 46%;
     font-size: 25pt;
     font-weight: bold;
 }
@@ -77,7 +77,7 @@ img#book3{
 .Vídeo{
     position: relative;
     top: 200px;
-    left: 400px;
+    left: 480px;
     height: 80px;
     width: 80px;
 }
@@ -122,17 +122,20 @@ th, td {
 .fim{
     position: relative;
     top: 320px;
-    padding: 40px;
+    padding: 60px;
     font-size: 20px;
     text-align: center;
     background-color: bisque;
     font-size: 15pt;
     font-family:"Comic Sans MS" ;
 }
-.HTML{
+img#HTML{
     position:relative;
     top: 200px;
+    left:2% ;
 }
-.CSS{
+img#CSS{
     position:relative;
+    top: 200px;
+    left: 88%;
 }
