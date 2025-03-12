@@ -11,21 +11,28 @@ body{
 }
 img#c{
     position: absolute;
-    top: 5%;
-    left: 7%;
+    top: 7%;
+    left: 5%;
 }
 img#java{
     position: absolute;
     top: 5%;
     right: 5%;
 }
-.rodapé {
-    color:darkred ;
+.flex-container{
+    display: flex;
+    background-color:lightskyblue;
+}
+
+.flex-container > div {
+    color: darkred;
     padding: 10px;
-    font-size: 35px;
-    text-align: center;
-    background-color: lightskyblue;
+    font-size: 26px;
+    font-weight: bold;
+    margin-right: 300px;
+    text-align:center;
     }
+
 .Menu{
     margin-right:  90px;
     font-size:20px;
