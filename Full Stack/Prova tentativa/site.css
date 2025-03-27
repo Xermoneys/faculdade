@@ -1,0 +1,71 @@
+body{
+    background-color: rgb(244, 238, 230);
+}
+.flex-container1{
+    display:flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    font-family: Arial;
+}
+.flex-container1 > div{
+    width: 75px;
+    margin: 25px;
+    text-align: center;
+    line-height: 0px;
+    font-size: 14px;
+    font-family: Arial;
+    height: 90px;
+}
+.flex-container2{
+    display: flex;
+    font-weight: bold;
+    font-family: Arial;
+    font-size: 30px;
+    margin-left: 125px;
+    color: gray;
+    
+}
+
+.Loja{
+    color: black;
+}
+.texto1{
+    position: relative;
+    top: 45px;
+    right: 318px;
+}
+.flex-container3{
+    display: flex;
+    font-weight: bold;
+    font-family: Arial;
+    font-size: 20px;
+    margin-left: 125px;
+    color: gray;
+    position: absolute;
+    top: 500px;
+}
+.novidades{
+    color: black;
+    font-size: 20px;
+}
+.flex-container4{
+    display: flex;
+    font-weight: bold;
+    font-family: Arial;
+    font-size: 20px;
+    margin-left: 125px;
+    color: gray;
+    position: absolute;
+    top: 900px;
+}
+.ajuda{
+    color: black;
+    font-size: 20px;
+}
+.texto2{
+
+}
+
+.texto3{
+
+}
