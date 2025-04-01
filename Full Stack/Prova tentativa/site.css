@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(238, 230, 230);
+    background-color:#f4f4f4;
 }
 .flex-container1{
     display:flex;
@@ -34,13 +34,62 @@ body{
     top: 45px;
     right: 318px;
 }
-.flex-container3{
+.flex-container3 {
     display: flex;
     position: absolute;
-    top: 100;
+    top: 320px;
+    gap: 20px;
 }
-
-
+.textoimg1{
+    display: flex;
+    font-family: arial;
+    font-weight: bold;
+    font-size: 15px;
+    color: black;
+    position: relative;
+    top: 100px;
+    right: 60%;
+}
+.textoimg2{
+    display: flex;
+    font-family: arial;
+    font-weight: bold;
+    font-size: 15px;
+    color: black;
+    position: relative;
+    top: 100px;
+    right: 505px;
+}
+.textoimg3{
+    display: flex;
+    font-family: arial;
+    font-weight: bold;
+    font-size: 15px;
+    color: black;
+    position: relative;
+    top: 100px;
+    right: 448px;
+}
+.textoimg4{
+    display: flex;
+    font-family: arial;
+    font-weight: bold;
+    font-size: 15px;
+    color: black;
+    position: relative;
+    top: 100px;
+    right: 406px;
+}
+.textoimg5{
+    display: flex;
+    font-family: arial;
+    font-weight: bold;
+    font-size: 15px;
+    color: black;
+    position: relative;
+    top: 100px;
+    right: 380px;
+}
 .flex-container4{
     display: flex;
     font-weight: bold;
@@ -69,10 +118,18 @@ body{
     color: black;
     font-size: 20px;
 }
-.texto2{
-
+.flex-container6{ 
+    width: 300px;
+    border-radius: 12px;
+    border: 1px solid;
+    border-color: white;
+    background-color: white;
+    padding: 30px;
+    box-shadow: 0 4px 0 0 #000;
+    position: relative;
+    top: 370px;
+    left: 60px;
 }
-
-.texto3{
+.flex-container7{
 
 }
