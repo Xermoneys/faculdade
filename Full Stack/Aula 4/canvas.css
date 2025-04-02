@@ -1,0 +1,11 @@
+body{
+    background-color: bisque;
+}
+
+#canvas{
+    border:4px solid white;
+    background-color: aquamarine;
+    position: relative;
+    top: 100px;
+    left: 700px;
+}
