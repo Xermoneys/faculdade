@@ -114,10 +114,6 @@ body{
     position: absolute;
     top: 1000px;
 }
-.ajuda{
-    color: black;
-    font-size: 20px;
-}
 .flex-container6{ 
     width: 250px;
     height: 350px;
@@ -125,6 +121,7 @@ body{
     border: 1px solid;
     border-color: white;
     background-color: white;
+    box-shadow: 3px 5px 10px #cbc8c8;
     padding: 30px;
     position: relative;
     top: 370px;
@@ -133,7 +130,7 @@ body{
 .texto5{
     font-weight: 100px;
     font-family: arial;
-    font-size: 12px;
+    font-size: 9px;
     height: 30px;
 }
 .texto6{
@@ -163,6 +160,7 @@ body{
     border: 1px solid;
     border-color: white;
     background-color: black;
+    box-shadow: 3px 5px 10px #cbc8c8;
     padding: 30px;
     position: relative;
     top: -42px;
@@ -172,7 +170,7 @@ body{
 .texto8{
     font-weight: 100px;
     font-family: arial;
-    font-size: 12px;
+    font-size: 9px;
     height: 30px;
 }
 .texto9{
@@ -191,3 +189,101 @@ body{
     top: 90px;
     left: 10px;
 }
+
+.ajuda{
+    color: black;
+    font-size: 20px;
+    height: 100px;
+}
+.flex-container8{ 
+        width: 290px;
+        height: 291px;
+        border-radius: 12px;
+        border: 1px solid;
+        border-color: white;
+        background-color: white;
+        box-shadow: 3px 5px 10px #cbc8c8;
+        color: black;
+        padding: 30px;
+        position: relative;
+        top: 40px;
+        left: 120px;
+}
+#imgc{
+    position: relative;
+    bottom: 5px;
+}
+
+.texto11{
+    font-weight: 100px;
+    font-family: arial;
+    font-size: 9px;
+    height: 30px;
+}
+.texto12{
+    font-weight: bold;
+    font-family: arial;
+    font-size: 20px;
+}
+.flex-container9{
+    display: flex;
+    font-weight: bold;
+    font-family: Arial;
+    font-size: 20px;
+    margin-left: 125px;
+    color: gray;
+    position: relative;
+    top: 100px;
+}
+.diferente{
+    color: black;
+    font-size: 20px;
+    height: 150px;
+}
+
+.flex-container10 {
+    display: flex;
+    gap: 20px; /* Espaço entre os quadros */
+    position: relative;
+    left: 120px;
+    font-weight: bold;
+    font-family: Arial;
+    font-size: 17px;
+    display: flex;
+  }
+  
+  .quadro1 {
+    padding: 20px;
+    height: 150px;
+    width: 190px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+  }
+  .quadro2{
+    padding: 20px;
+    height: 150px;
+    width: 190px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+  }
+  .quadro3{
+    padding: 20px;
+    height: 150px;
+    width: 190px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+  }
+  
