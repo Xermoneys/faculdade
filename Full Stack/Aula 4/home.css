@@ -1,0 +1,38 @@
+body{
+    background-color: antiquewhite;
+}
+
+.Título{
+    font-family: arial;
+    font-size: 30px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 20px;
+}
+
+a:hover{
+    color:rgb(26, 192, 225)
+}
+.Link{
+    font-family: arial;
+    font-size: 18px;
+    position: relative;
+    top: 40px;
+    left: 30px;
+    color: rgb(117, 13, 161);
+}
+#Menu{
+    position: relative;
+    top: 30px;
+    left: 30px;
+    color:rgb(246, 73, 5)
+} 
+.linkprojeto{
+    position: relative;
+    top: 40px;
+    left: 30px;
+    font-size: 16px;
+    color: green;
+}
