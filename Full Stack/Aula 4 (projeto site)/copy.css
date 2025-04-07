@@ -9,12 +9,22 @@ body{
     border: solid 5px navy;
     background-color: bisque;
 }
-img#c{
+table {
+    width: 30%;
+    border-style: dotted;
+    border-color: red;
+}
+th, td {
+    border: 1px solid red;
+    padding: 3px;
+    text-align: left;
+}
+.imgc{
     position: absolute;
     top: 7%;
     left: 5%;
 }
-img#java{
+.java{
     position: absolute;
     top: 5%;
     right: 5%;
@@ -23,13 +33,16 @@ img#java{
     display: flex;
     background-color:lightskyblue;
 }
+.flex-container1{
+
+}
 
 .flex-container > div {
     color: darkgray;
     padding: 10px;
     font-size: 26px;
     font-weight: bold;
-    margin-right: 300px;
+    margin-right: 500px;
     text-align:center;
     }
     
