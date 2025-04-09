@@ -1,161 +1,136 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
 body{
     background-color: lightgray;
+    padding: 0px;
 }
-.Título {
+h1{
     color: darkgreen;
+    font-size: 30pt;
+}
+.sitetodo{
+    display: flex;
+    flex-direction: column;
+    padding: 0.5%;
+}
+
+.Título {
+    display: flex;
     padding: 20px;
-    font-size: 45px;
     text-align: center;
     border: solid 5px navy;
     background-color: bisque;
-}
-table {
-    width: 30%;
-    border-style: dotted;
-    border-color: red;
-}
-th, td {
-    border: 1px solid red;
-    padding: 3px;
-    text-align: left;
-}
-.imgc{
-    position: absolute;
-    top: 7%;
-    left: 5%;
-}
-.java{
-    position: absolute;
-    top: 5%;
-    right: 5%;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
 }
 .flex-container{
     display: flex;
     background-color:lightskyblue;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
 }
-.flex-container1{
-
-}
-
-.flex-container > div {
-    color: darkgray;
-    padding: 10px;
-    font-size: 26px;
-    font-weight: bold;
-    margin-right: 500px;
-    text-align:center;
-    }
-    
 .Menu{
-    margin-right:  90px;
-    font-size:20px;
-    font-weight: bold;
+    display: flex;
+    list-style:none;
+    width: 60%;
+    justify-content: space-evenly;
+    padding: 0px;
+
 }
-.Introdução{
-    position:relative;
-    top: 20px;
-    left: 45%;
-    font-size: 25pt;
+.Menu > li{
+    color: darkred;
     font-weight: bold;
+    font-size: 20px;
+}
+.titulos{
+    display: flex;
+    justify-content: center;
+    font-size: 20pt;
+    font-weight: bold;
+    margin: 20px 0px 20px 0px;
 }
 .textoC{
-    position: relative;
-    top: 50px;
+    display: flex;
+    flex-direction: column;
+}
+.textoC > p{
     color:indigo ;
     font-family: sans-serif;
     font-size: 20pt;
+    padding: 12px 0px 12px 0px;  
+    text-align: center;
 }
-.Livros{
-    position: relative;
-    top: 70px;
-    left: 46%;
-    font-size: 25pt;
-    font-weight: bold;
+.capas-container{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding: 20px 0px 50px 0px;  
 }
-img#book1{
-    position: relative;
-    left: 400px;
-    top: 120px;
+.capas{
+    display: flex;
+    justify-content: space-around;
+    width: 60%;
+    
 }
-img#book2{
-    position: relative;
-    left: 500px;
-    top: 120px;
+.iframes-container{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 20px 0px 50px 0px;
 }
-img#book3{
-    position: relative;
-    left: 600px;
-    top: 120px;
-}
-.Aprenda{
-    position: relative;
-    left: 33%;
-    top: 150px;
-    font-size: 25pt;
-    font-weight: bold;
-}
-.Vídeo{
-    position: relative;
-    top: 200px;
-    left: 480px;
-    height: 80px;
-    width: 80px;
-}
-.Mapa{
-    position: relative;
-    top:120px;
-    left:950px ;
+.iframes{
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
 }
 iframe{
     width: 350px;
     height: 350px;
 }
-.Contatos{
-    position: relative;
-    top: 200px;
-    left: 45%;
-    font-size: 25pt;
-    font-weight: bold;
+.tabela-container{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 0px 0px 50px 0px;
 }
-table{
-    position: relative;
-    top: 250px;
-    left: 33%;
+table {
+    width: 30%;
+    border-style:dashed;
+    border-color: red;
 }
 th, td {
-    border: 1px solid #000;
-    padding: 10px; 
-    text-align: center; 
+    border: 1px solid red;
+    padding: 3px;
+    text-align: center;
 }
 .nome{
     color: red;
     text-align: center;
 }
+.sites-container{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
 .sites{
-    position: relative;
-    top: 300px;
-    left: 460px;
-    padding: 20px;
+    flex-direction: column;
     background-color: yellow;
-    width: 40%;
+    padding: 20px 20px 20px 40px ;
+    width: 35%;
 }
-.fim{
-    position: relative;
-    top: 320px;
-    padding: 60px;
-    font-size: 20px;
-    text-align: center;
-    background-color: bisque;
+.sites > p{
+    padding-bottom:10px ;
+}
+.footer{
+    border:none;
+    margin-top:20px;
+}
+.footer > p{
+    font-family:"Comic Sans MS";
     font-size: 15pt;
-    font-family:"Comic Sans MS" ;
-}
-img#HTML{
-    position:relative;
-    top: 200px;
-    left:2% ;
-}
-img#CSS{
-    position:relative;
-    top: 200px;
-    left: 88%;
+    font-weight: bold;
 }
