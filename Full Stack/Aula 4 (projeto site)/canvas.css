@@ -6,6 +6,10 @@ body{
     border:4px solid white;
     background-color: aquamarine;
     position: relative;
+<<<<<<< HEAD:Full Stack/Aula 4/canvas.css
+    top: 100px;
+=======
     top: 200px;
+>>>>>>> 7e7a47a5e51542cfa87bebdaed1de374a95c8003:Full Stack/Aula 4 (projeto site)/canvas.css
     left: 800px;
 }
