@@ -42,23 +42,23 @@ body{
 }
 .texto-loja{
     display: flex;
-    width: 31%;
-    font-size: 30px;
+    width: 36%;
+    font-size: 35px;
 }
-.negrito-preto{
-    color: black;
-    margin: 0%;
-}
-.texto{
-    position: relative;
-    top: 45px;
-    right: 318px;
-}
-.flex-container3 {
+.imagens-container{
     display: flex;
-    position: absolute;
-    top: 320px;
-    gap: 20px;
+    gap: 25px;
+    margin: 70px 0px 80px 120px;
+    flex-wrap: wrap;
+}
+.imagem{
+    text-align: center;
+}
+.imagem > p{
+    display: flex;
+    justify-content: center;
+    font-family: Arial;
+    font-weight: bold;
 }
 .textoimg1{
     display: flex;
@@ -66,9 +66,7 @@ body{
     font-weight: bold;
     font-size: 15px;
     color: black;
-    position: relative;
-    top: 100px;
-    right: 60%;
+    
 }
 .textoimg2{
     display: flex;
@@ -76,9 +74,7 @@ body{
     font-weight: bold;
     font-size: 15px;
     color: black;
-    position: relative;
-    top: 100px;
-    right: 505px;
+    
 }
 .textoimg3{
     display: flex;
@@ -86,9 +82,7 @@ body{
     font-weight: bold;
     font-size: 15px;
     color: black;
-    position: relative;
-    top: 100px;
-    right: 448px;
+   
 }
 .textoimg4{
     display: flex;
@@ -96,9 +90,7 @@ body{
     font-weight: bold;
     font-size: 15px;
     color: black;
-    position: relative;
-    top: 100px;
-    right: 406px;
+    
 }
 .textoimg5{
     display: flex;
@@ -106,9 +98,7 @@ body{
     font-weight: bold;
     font-size: 15px;
     color: black;
-    position: relative;
-    top: 100px;
-    right: 380px;
+    
 }
 .flex-container4{
     display: flex;
@@ -117,8 +107,7 @@ body{
     font-size: 20px;
     margin-left: 125px;
     color: gray;
-    position: absolute;
-    top: 500px;
+    
 }
 .novidades{
     color: black;
