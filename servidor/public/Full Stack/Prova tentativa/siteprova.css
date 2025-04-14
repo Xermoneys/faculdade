@@ -1,36 +1,52 @@
-
+*{
+    padding: 0px;
+    margin: 0px;
+}
 body{
     background-color:#f4f4f4;
 }
-.flex-container1{
-    display:flex;
-    flex-wrap: nowrap;
-    justify-content: center;
-    font-family: Arial;
-}
-.flex-container1 > div{
-    width: 75px;
-    margin: 25px;
-    text-align: center;
-    line-height: 0px;
-    font-size: 14px;
-    font-family: Arial;
-    height: 90px;
-}
-.flex-container2{
+.site-todo{
     display: flex;
-    font-weight: bold;
+    flex-direction: column;
+    padding: 0.5%;
+}
+.Menu-container{
+    display:flex;
+    width: 100%;
     font-family: Arial;
-    font-size: 30px;
-    margin-left: 125px;
+    justify-content: center;
+    margin-bottom: 80px ;
+}
+.Menu{
+    display: flex;
+    list-style: none;
+    width: 60%;
+    margin: 0%;
+    padding: 20px 0px 20px 0px;
+    justify-content: space-evenly;
+}
+.titulos{
+    display:flex;
+    font-family: ARIAL;
+    font-size: 20px;
+    font-weight: bold;
     color: gray;
-    
 }
-
 .Loja{
-    color: black;
+    display: flex;
+    width: 50%;
+    margin-left: 125px;
 }
-.texto1{
+.texto-loja{
+    display: flex;
+    width: 31%;
+    font-size: 30px;
+}
+.negrito-preto{
+    color: black;
+    margin: 0%;
+}
+.texto{
     position: relative;
     top: 45px;
     right: 318px;

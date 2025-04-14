@@ -1,5 +1,4 @@
 
-
 function desenhar_quadrado(ctx,x,y,w,h,c){
     ctx.beginPath();
     ctx.fillStyle = c

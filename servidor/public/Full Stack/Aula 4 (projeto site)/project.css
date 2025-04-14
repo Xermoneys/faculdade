@@ -1,9 +1,5 @@
-table th , td{
-    border: 4px solid lightskyblue;
-    border-collapse:collapse;
-    width: 160px;
-    padding: 10px;
-    text-align: center;
+body{
+    background-color: antiquewhite;
 }
 a:hover{
     color: lightseagreen;
@@ -14,36 +10,44 @@ a:hover{
     font-weight: bold;
     display: flex;
     justify-content: center;
-    position: relative;
-    top: 20px;
+    margin: 20px 0px 20px 0px;
 }
-.tabela{
-    position: relative;
-    top: 80px;
-    left: 80px;
-}
-body{
-    background-color: antiquewhite;
-}
-.Link{
+.Menu{
+    display: flex;
+    font-size: 25px;
     font-family: arial;
-    font-size: 18px;
-    position: relative;
-    top: 40px;
-    left: 30px;
+    font-weight: bold;
+    margin: 0px 40px ;
+} 
+.Link{
+    display: flex;
+    font-family: arial;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 20px;
     color: rgb(117, 13, 161);
 }
 
-.Menu{
-    position: relative;
-    top: 30px;
-    left: 30px;
-    color:rgb(246, 73, 5)
-} 
 .linkprojeto{
-    position: relative;
-    top: 40px;
-    left: 30px;
-    font-size: 16px;
+    display: flex;
+    font-size: 20px;
     color: green;
+    margin-left: 5px;
+}
+table th , td{
+    border: 4px solid lightskyblue;
+    border-collapse:collapse;
+    width: 160px;
+    padding: 10px;
+    text-align: center;
+}
+th{
+    color: darkorchid;
+}
+.tabela{
+    display: flex;
+    margin: 20px 0px 0px 20px;
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: bold;
 }
