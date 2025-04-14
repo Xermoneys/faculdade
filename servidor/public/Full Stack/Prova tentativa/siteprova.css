@@ -37,6 +37,9 @@ body{
     width: 50%;
     margin-left: 125px;
 }
+.corpreta{
+    color: black;
+}
 .texto-loja{
     display: flex;
     width: 31%;
