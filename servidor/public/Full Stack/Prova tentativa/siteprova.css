@@ -33,8 +33,8 @@ body{
     color: gray;
 }
 .Loja{
-    display: flex;
-    width: 50%;
+    display:flex;
+    width: 80%;
     margin-left: 125px;
 }
 .corpreta{
@@ -66,13 +66,13 @@ body{
 }
 .Ajuda{
     display: flex;
-    margin: 10px 0px 30px 125px;
+    margin: 10px 0px 20px 125px;
 }
 .tabelas-container{
     display: flex;
     width: 50%;
     gap: 20px;
-    margin-left: 125px;
+    margin:0px 0px 50px 125px;
 }
 .tabela-macbook{ 
     width: 250px;
@@ -104,8 +104,8 @@ body{
     height: 10px;
 }
 .tabela-macbook > #imga{
-    position: relative;
-    top: 60px;
+    display: flex;
+    margin-top: 60px;
 }
 .tabela-iphone{ 
     width: 250px;
@@ -135,34 +135,26 @@ body{
     font-size:14px ;
     height: 10px;
 }
-.flex-container7 > #imgb{
-    position: relative;
-    top: 90px;
-    left: 10px;
+.tabela-iphone > #imgb{
+    display: flex;
+    margin-top: 100px;
 }
-
-.ajuda{
+.tabela-especialista{ 
+    width: 290px;
+    height: 300px;
+    border-radius: 12px;
+    border: 1px solid;
+    border-color: white;
+    background-color: white;
+    box-shadow: 3px 5px 10px #cbc8c8;
     color: black;
-    font-size: 20px;
-    height: 100px;
-}
-.flex-container8{ 
-        width: 290px;
-        height: 291px;
-        border-radius: 12px;
-        border: 1px solid;
-        border-color: white;
-        background-color: white;
-        box-shadow: 3px 5px 10px #cbc8c8;
-        color: black;
-        padding: 30px;
-        position: relative;
-        top: 40px;
-        left: 120px;
+    padding: 30px;
+    margin-left: 125px;
 }
 #imgc{
-    position: relative;
-    bottom: 5px;
+    display: flex;
+    justify-content: center;
+    margin-top: 5.2px;
 }
 
 .texto11{
@@ -176,34 +168,19 @@ body{
     font-family: arial;
     font-size: 20px;
 }
-.flex-container9{
+.Apple{
     display: flex;
-    font-weight: bold;
-    font-family: Arial;
-    font-size: 20px;
-    margin-left: 125px;
-    color: gray;
-    position: relative;
-    top: 100px;
+    margin: 40px 0px 20px 125px;
 }
-.diferente{
-    color: black;
-    font-size: 20px;
-    height: 150px;
-}
-
-.flex-container10 {
+.Quadros-container {
     display: flex;
     gap: 20px; 
-    position: relative;
-    left: 120px;
     font-weight: bold;
     font-family: Arial;
     font-size: 17px;
-    display: flex;
+    margin: 0px 0px 30px 125px;
     height: 200px;
   }
-  
   .quadro1 {
     padding: 20px;
     height: 150px;
@@ -238,61 +215,39 @@ body{
     display: flex;
     align-items: center;
   }
-  .texto14{
-    position: relative;
-    bottom: 10px;
-  }
-  .texto15{
-    position: relative;
-    top: 100px;
-    right: 230px;
-    color: #3579c7;
-  }
-  .texto16{
-    position: relative;
-    top: 120px;
-    right: 335px;
-    color: #3579c7
-  }
-  .texto17{
-    position: relative;
-    top: 120px;
-    right: 350px;
-  }
-  .texto18{
-    position: relative;
-    top: 140px;
-    right: 540px;
-    color: #3579c7;
-  }
-  .flex-container11{
+.corazul{
+    color: #068dee;
+}
+.quadro3 > p{
+    margin-top: 35px;
+}
+.final{
+    display: flex;
+    justify-content: center;
+    width: 100%;
     font-size: 9px;
     font-family: arial;
     font-weight: bold;
   }
-  .texto19{
-    position: relative;
-    left: 270px;
-    top: 80px;
-    color: grey;
-    height: 20px;
-  }
-  .texto20{
-    position: relative;
-    left: 270px;
-    top: 80px;
-  }
-  .texto21{
-    position: relative;
-    top: 50px;
-    left: 1500px;
-  }
-  .gray-line{
-    position: relative;
-    left: 270px;
-    top: 80px;
-    color: grey;
-    background-color: #ccc;
-    width: 1254px;
-    margin: 20px 0;
-  }
+.quadro-final{
+    width: 50%;
+}
+.gray-line{
+    color: rgb(158, 148, 148);
+    height: 5px;
+    background-color: #e6dddd;
+    border-radius: 8px;
+    border: none;
+}
+.quadro-final > p{
+    margin-top: 5px;
+}
+.texto {
+    width:20%;
+    float:right;
+    text-align: right;
+}
+.Brasil{
+    float: right;
+    text-align: right;
+}
