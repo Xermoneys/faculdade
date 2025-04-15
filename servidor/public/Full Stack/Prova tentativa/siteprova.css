@@ -141,7 +141,7 @@ body{
 }
 .tabela-especialista{ 
     width: 290px;
-    height: 300px;
+    height: 297px;
     border-radius: 12px;
     border: 1px solid;
     border-color: white;
@@ -154,7 +154,7 @@ body{
 #imgc{
     display: flex;
     justify-content: center;
-    
+    align-content: flex-end;
 }
 
 .texto11{
