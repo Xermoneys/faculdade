@@ -140,21 +140,23 @@ body{
     margin-top: 100px;
 }
 .tabela-especialista{ 
-    width: 290px;
-    height: 297px;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    width: 34%;
+    height: 340px;
     border-radius: 12px;
     border: 1px solid;
     border-color: white;
     background-color: white;
     box-shadow: 3px 5px 10px #cbc8c8;
     color: black;
-    padding: 30px;
     margin-left: 125px;
 }
 #imgc{
     display: flex;
     justify-content: center;
-    align-content: flex-end;
+    margin-left: 25px;
 }
 
 .texto11{
@@ -162,11 +164,15 @@ body{
     font-family: arial;
     font-size: 9px;
     height: 30px;
+    margin-left: 20px;
 }
 .texto12{
     font-weight: bold;
     font-family: arial;
     font-size: 20px;
+    display: flex;
+    justify-content: center;
+    margin-left: 20px;
 }
 .Apple{
     display: flex;
