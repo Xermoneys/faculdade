@@ -187,7 +187,7 @@ body{
     margin: 0px 0px 30px 125px;
     height: 200px;
   }
-  .quadro1 {
+.quadro1 {
     padding: 20px;
     height: 150px;
     width: 190px;
@@ -199,7 +199,7 @@ body{
     display: flex;
     align-items: center;
   }
-  .quadro2{
+.quadro2{
     padding: 20px;
     height: 150px;
     width: 190px;
@@ -210,7 +210,7 @@ body{
     display: flex;
     align-items: center;
   }
-  .quadro3{
+.quadro3{
     padding: 20px;
     height: 150px;
     width: 190px;
