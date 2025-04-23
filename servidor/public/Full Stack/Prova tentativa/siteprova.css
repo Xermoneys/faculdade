@@ -143,7 +143,7 @@ body{
     display: flex;
     justify-content: flex-end;
     flex-direction: column;
-    width: 34%;
+    width: 330px;
     height: 340px;
     border-radius: 12px;
     border: 1px solid;
