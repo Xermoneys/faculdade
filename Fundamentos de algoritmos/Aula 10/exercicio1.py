@@ -12,3 +12,27 @@
 # from random import randint, random
 # print(randint(0, 10))
 # print(random() * 10)
+
+from random import randint, random
+
+
+#faz as listas do jeito que quero
+inteiros = [randint(0,10) for _ in range(10)] 
+reais = [random() * 10 for _ in range(5)]
+strings = ['Python', 'Java', 'C++', 'JavaScript', 'Ruby', 'PHP', 'Swift' ]
+
+#adiciona as listas na lista completa
+completa = []
+completa.append(inteiros)
+completa.append(reais)
+completa.append(strings)
+
+#deleta as listas anteriores
+del inteiros
+del reais
+del strings
+
+#imprime a lista
+for lista in completa:
+    for elemento in lista:
+        print(elemento)
