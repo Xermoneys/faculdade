@@ -4,27 +4,31 @@
 #  ímpares de cada linha da matriz
 
 from random import randint
-
+#pedir os numeros 
 M = []
-for num_linha in range(4):
+for i in range(16):
+    numeros = int(input(f"Digite o {i + 1}º número: "))
+    M.append(numeros)
+
+matriz = []
+contador = 0
+for i in range(4):
     linha = []
-    for num_coluna in range(4):
-        linha.append(randint(0,16))
-    M.append(linha)
+    for j in range(4):
+        linha.append(M[contador])
+        contador += 1
+    matriz.append(linha)
 
 # Exibe a matriz
 print("\nMatriz:")
-for linha in M:
+for linha in matriz:
     for elemento in linha:
         print(f'{elemento}', end=' ')
     print() # pula para a próxima linha
 
-
-soma_impares = []
-for i in range(4):
-    soma = 0
-    for j in range(4):
-        if elemento [i][j] % 2 != 0:
-            soma += elemento[i][j]
-    soma_impares.append(soma)
+soma_impares = 0
+for linha in matriz:
+    for num in linha:
+        if num % 2 != 0:  # Verifica se o número é ímpar
+            soma_impares += num
 print(f"\nSoma dos elementos ímpares: {soma_impares} ")
