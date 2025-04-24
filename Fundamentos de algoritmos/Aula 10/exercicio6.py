@@ -9,30 +9,33 @@
 
 from random import randint
 
-M = []
-soma = 0
+matriz = []
+soma = 0 
 contador = 0
-
+#geração da matriz
 for num_linha in range(12):
     linha = []
     for num_coluna in range(12):
         linha.append(randint(0,100))
         if num_linha > num_coluna:
-            soma = soma + M[num_coluna][num_linha]
-            contador = contador + 1
-print("\nMatriz:")
-for linha in M:
+            soma = soma + matriz[num_coluna][num_linha]
+            contador += 1
+    matriz.append(linha)
+#print da matriz
+print("\n Matriz")
+for linha in matriz:
     for elemento in linha:
-        print(f'{elemento:2d}', end=' ')
-    print() # pula para a próxima linha
+        print(f"{elemento:3}",end=" ")
+    print()
 
-operacao = input("Digite 'S' para soma ou 'M' para média: ")
-if operacao == 'S':
-    print(f"Soma dos elementos abaixo da diagonal principal: {soma}")
-elif operacao == 'M':
-    if contador > 0:
-        media = soma / contador
+#perguntar se quer a soma ou a média
+opcao = input("Digite 'S' para a soma ou 'M' para a média.")
+if opcao == "S":
+    print(f"A soma será {soma}.")
+elif opcao == "M":
+    media = soma / contador
+    print(f"A média será {media:.2f}")
 else:
-    media = 0
+    print("Opção inválida.Tente novamente")
 
-print(f"A média dos elementos vai ser: {media:.2f}")
+
