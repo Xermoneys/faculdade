@@ -7,18 +7,13 @@
 from random import randint
 
 #criação da matriz 
-matriz = []
-for num_linha in range(10):
-    linha = []
-    for num_coluna in range(15):
-        linha.append(randint(0,100))
-    matriz.append(linha)
+matriz = [[randint(0,100)for _ in range(15)]for _ in range(10)]
 
 #iimpressão da matriz
 print("\nMatriz completa")
-for linha in range (10):
-    for coluna in range(15):
-        print(f"{matriz[linha][coluna]}", end=" ")
+for linha in matriz:
+    for elemento in linha:
+        print(f"{elemento}",end=" ")
     print()
 
 #impressão da primeira linha

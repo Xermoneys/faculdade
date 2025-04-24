@@ -19,17 +19,19 @@
 #  forma de coluna.
 
 from random import randint
+#forma de fazer uma matriz de forma reduzida
+matriz = [[randint(0,100) for _ in range(5)]for _ in range(10)]
 
-matriz = [[randint(0, 100) for _ in range(5)] for _ in range(10)]
-print("Matriz original:")
+#impressão da matriz
+print("\n Matriz completa")
 
 for linha in matriz:
     for elemento in linha:
-        print(f"{elemento:3}", end=" ")
+        print(f"{elemento:5}",end=" ")
     print()
-    
-print("\nMatriz transposta:")
-for i in range(5):
-    for j in range(10):
-        print(f"{matriz[j][i]:3}", end=" ")
+
+print("\n Matriz transposta:")
+for linha in range(5):
+    for coluna in range(10):
+        print(f"{matriz[coluna][linha]:5}",end=" ")
     print()
