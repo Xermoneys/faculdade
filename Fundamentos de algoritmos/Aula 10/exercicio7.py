@@ -29,9 +29,9 @@ for linha in notas:
 
 print("\nRelatório: ")
 for aluno in range(len(notas)):
-    print(f'Aluno {aluno} | ', end='')
+    print(f'Aluno {aluno} | ', end=' ')
     menor_nota = min(notas[aluno]) 
     print(f'Menor nota: {menor_nota} | ', end=' ')
-    menor_prova = notas[aluno].index(menor_nota) 
+    menor_prova = notas[aluno].index(menor_nota) + 1
     print(f'Prova: {menor_prova}')
 

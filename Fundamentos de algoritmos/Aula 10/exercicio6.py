@@ -29,7 +29,7 @@ for linha in matriz:
     print()
 
 #perguntar se quer a soma ou a média
-opcao = input("Digite 'S' para a soma ou 'M' para a média.")
+opcao = input("\nDigite 'S' para a soma ou 'M' para a média: ")
 if opcao == "S":
     print(f"A soma será {soma}.")
 elif opcao == "M":
