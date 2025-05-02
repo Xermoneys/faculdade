@@ -1,19 +1,13 @@
 
 var http = require( "http");
 
-var bodyParser = require( "body-parser");
-
 var express = require( "express");
 
 var mongodb = require("mongodb")
 
-var dbo = client.db("exemplo_bd");
-
-var usuarios = dbo.collection("usuarios");
+const uri = "mongodb+srv://luciano:240904lu@projeto.vla6ti0.mongodb.net/?retryWrites=true&w=majority&appName=Projeto";
 
 const MongoClient = mongodb.MongoClient
-
-const uri = "mongodb+srv://Xermoneys:462404LuVentura@faculdade.qd9zggt.mongodb.net/?retryWrites=true&w=majority&appName=Faculdade";
 
 const client = new MongoClient(uri, {useNewUrlParser: true});
 
@@ -25,16 +19,19 @@ app. use(express .static( "./public") ) ;
 
 var server = http.createServer(app) ;
 
-
 server. listen(3000);
 
+var dbo = client.db("exemplo_bd");
+
+var usuarios = dbo.collection("usuarios");
+
 app.post("/cadastrar_usuario", function(req, resp) {
-    var data = { db_nome: req.body.nome, db_login: req.body.login, db_senha: req.body.senha };
+    var data = {db_nome: req.body.nome, db_login: req.body.login, db_senha: req.body.senha};
     usuarios.insertOne(data, function (err) {
     if (err) {
-    resp.render('resposta_usuario', {resposta: "Erro ao cadastrar usuário!"})
+    resp.status(200).send("Erro ao cadastrar usuário!")
     }else {
-    resp.render('resposta_usuario', {resposta: "Usuário cadastrado com sucesso!"})
+    resp.status(200).send( "Usuário cadastrado com sucesso!")
     };
     });
    
@@ -45,11 +42,11 @@ app.post("/logar_usuario", function(req, resp) {
     usuarios.find(data).toArray(function(err, items) {
     console.log(items);
     if (items.length == 0) {
-    resp.render('resposta_usuario', {resposta: "Usuário/senha não encontrado!"})
+    resp.status(200).send("Usuário/senha não encontrado!")
     }else if (err) {
-    resp.render('resposta_usuario', {resposta: "Erro ao logar usuário!"})
+    resp.status(200).send("Erro ao logar usuário!")
     }else {
-    resp.render('resposta_usuario', {resposta: "Usuário logado comsucesso!"})
+    resp.status(200).send("Usuário logado comsucesso!")
     };
     });
     });
