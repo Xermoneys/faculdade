@@ -32,6 +32,6 @@ a:hover{
 .linkprojeto{
     display: flex;
     font-size: 20px;
-    color: green;
+    color: rgb(247, 4, 4);
     margin-left: 5px;
 }

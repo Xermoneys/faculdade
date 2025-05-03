@@ -1,0 +1,61 @@
+body {
+    background-color: antiquewhite;
+    padding: 0px;
+}
+.site_todo {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5%;
+}
+.Titulo-container{
+    display: flex;
+    padding: 20px;
+    text-align: center;
+    border: solid 5px navy;
+    background-color: bisque;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+.Titulo-container > p {
+    font-size: 25px;
+    font-weight: bold;
+    font-family: arial;
+}
+.menu-container{
+    display: flex;
+    background-color: rgb(189, 220, 239);
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+}
+.menu{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    width: 50%;
+    justify-content: space-around;
+}
+.menu > li {
+    color: darkviolet;
+    font-family: arial;
+    font-size: 16px;
+    font-weight: bold;
+}
+a:link{
+    color: chocolate;
+    background-color: transparent;
+    text-decoration: none;
+}
+a:visited{
+    color: purple;
+}
+a:hover{
+    color: rgb(190, 56, 190);
+    background-color: transparent;
+    text-decoration:none ;
+  }
+
+a:active{
+    color: rgb(165, 77, 15);
+}

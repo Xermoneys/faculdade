@@ -19,7 +19,7 @@ app.use(express.static('./public'));
 
 var server = http.createServer(app);
 server.listen(3000, () => {
-    console.log("servidor rodando...");
+console.log("servidor rodando...");
 });
 
 client.connect().then(() => {
