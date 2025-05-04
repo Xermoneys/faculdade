@@ -1,5 +1,5 @@
 body {
-    background-color: #B3B3F1;
+    background-color: #EAE0D5;
     padding: 0px;
 }
 .site_todo {
@@ -11,21 +11,21 @@ body {
     display: flex;
     padding: 20px;
     text-align: center;
-    border: solid 5px navy;
-    background-color: #d4cdf4;
+    border: solid 5px #5E503F;
+    background-color: #C6AC8F;
     justify-content: center;
     align-items: center;
     flex-direction: row;
 }
 .Titulo-container > p {
-    color: #8a4362;
+    color: darkred;
     font-size: 25px;
     font-weight: bold;
     font-family: arial;
 }
 .menu-container{
     display: flex;
-    background-color: #DCB6D5;
+    background-color: #bcb0a1;
     justify-content: center;
     align-items: center;
     height: 50px;
@@ -43,12 +43,12 @@ body {
     font-weight: bold;
 }
 a:link{
-    color: chocolate;
+    color: #51A3A3;
     background-color: transparent;
     text-decoration: none;
 }
 a:visited{
-    color: #B15E6C;
+    color: purple;
 }
 a:hover{
     color: rgb(190, 56, 190);
