@@ -59,3 +59,8 @@ a:hover{
 a:active{
     color: rgb(165, 77, 15);
 }
+h1 {
+    display: flex;
+    justify-content: center;
+    color: rgb(49, 49, 214);
+}
