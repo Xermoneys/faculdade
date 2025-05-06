@@ -43,19 +43,31 @@ body {
     font-weight: bold;
 }
 a:link{
-    color: chocolate;
+    color: #bf2841;
     background-color: transparent;
     text-decoration: none;
 }
 a:visited{
-    color: #B15E6C;
+    color: #d02441;
 }
 a:hover{
-    color: rgb(190, 56, 190);
+    color: rgb(155, 39, 155);
     background-color: transparent;
     text-decoration:none ;
   }
 
 a:active{
     color: rgb(165, 77, 15);
+}
+.Texto_apresentacao > p{
+    font-family: arial;
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    text-align: justify;
+    margin: 0px 50px 20px 50px;
+}
+h1 {
+    color:rgb(200, 234, 255);
+    display: flex;
+    justify-content: center;
 }

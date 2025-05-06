@@ -15,7 +15,6 @@ body {
     background-color: #C6AC8F;
     justify-content: center;
     align-items: center;
-    flex-direction: row;
 }
 .Titulo-container > p {
     color: darkred;
@@ -29,12 +28,13 @@ body {
     justify-content: center;
     align-items: center;
     height: 50px;
+    margin-bottom:30px;
 }
 .menu{
     display: flex;
     flex-direction: row;
     list-style: none;
-    width: 50%;
+    width: 60%;
     justify-content: space-around;
 }
 .menu > li {
@@ -43,12 +43,12 @@ body {
     font-weight: bold;
 }
 a:link{
-    color: #51A3A3;
+    color: #0d5a5a;
     background-color: transparent;
     text-decoration: none;
 }
 a:visited{
-    color: purple;
+    color: #0d5a5a;
 }
 a:hover{
     color: rgb(190, 56, 190);
@@ -58,4 +58,28 @@ a:hover{
 
 a:active{
     color: rgb(165, 77, 15);
+}
+.Tabela-container{
+    display: flex;
+    justify-content: center;
+}
+
+table {
+    width: 50%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-family: Arial, sans-serif;
+}
+th, td {
+    border: 1px solid #460909;
+    text-align: center;
+    font-family: arial;
+    padding: 8px;
+}
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+td {
+    background-color: rgb(244, 215, 179);
 }

@@ -43,12 +43,12 @@ body {
     font-weight: bold;
 }
 a:link{
-    color: #FF715B;
+    color: #772ce8;
     background-color: transparent;
     text-decoration: none;
 }
 a:visited{
-    color: #D05E58;
+    color: #772ce8;
 }
 a:hover{
     color: rgb(190, 56, 190);
