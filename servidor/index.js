@@ -26,8 +26,8 @@ client.connect().then(() => {
     var dbo = client.db("exemplo_bd");
     var usuarios = dbo.collection("usuarios");
 
-    app.post("/cadastrar_usuario", function (req, resp) {
-        var data = {db_nome:req.body.nome, db_login: req.body.login, db_senha: req.body.senha };
+    app.post("/submeter_patente", function (req, resp) {
+        var data = {db_nome:req.body.nome, db_proprietário: req.body.proprietario, db_data_expedição: req.body.expedicao };
         usuarios.insertOne(data, function (err) {
             if (err) {
                 resp.status(500).send("Erro ao cadastrar usuário!");
