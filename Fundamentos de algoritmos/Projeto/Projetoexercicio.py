@@ -48,13 +48,8 @@ def procura_contato():
             if nome_procurado.lower() in nome.lower():
                 print(f"Nome: {nome}, Sobrenome: {sobrenome}, Telefone: {telefone}, Email: {email}.")
                 break
-        else:
+        if nao_encontrado == True:
             print("Contato não encontrado.")
-
-    #para verificar mais de dois nome
-    #substituindo o else
-    if nao_encontrado == True:
-       print("Contato não encontrado")
 
 def atualiza_contato():
     nome_atualizar = input("Digite o nome do contato a ser atualizado: ")
