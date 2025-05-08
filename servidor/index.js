@@ -25,9 +25,15 @@ console.log("servidor rodando...");
 client.connect().then(() => {
     var dbo = client.db("exemplo_bd");
     var usuarios = dbo.collection("usuarios");
+    var nome 
+    var proprietario 
+    var expedicao 
 
     app.post("/submeter_patente", function (req, resp) {
         var data = {db_nome:req.body.nome, db_proprietário: req.body.proprietario, db_data_expedição: req.body.expedicao };
+        nome = data.db_nome
+        proprietario = data.db_proprietário
+        expedicao = data.db_data_expedição
         usuarios.insertOne(data, function (err) {
             if (err) {
                 resp.status(500).send("Erro ao cadastrar usuário!");
@@ -36,7 +42,7 @@ client.connect().then(() => {
             }
         });
     });
-
+    console.log(nome)
     app.post("/logar_usuario", function (req, resp) {
         var data = { db_login: req.body.login, db_senha: req.body.senha };
         usuarios.find(data).toArray(function (err, items) {
