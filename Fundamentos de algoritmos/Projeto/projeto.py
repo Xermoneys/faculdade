@@ -4,7 +4,7 @@
 # Listar informações de músicas buscadas
 # Curtir e descurtir músicas
 # Gerenciar playlists*
-# Visualizar histórico**#
+# Visualizar histórico**
 
 #Gerenciar playlist:
 #• Criar, editar, excluir playlists
@@ -18,11 +18,12 @@
 #'a': anexar (acrescenta ao final do arquivo se já existir).
 #'r+': leitura e escrita.
 
+#Para não acontecer o vazamento de senha é recomendavel dar a mensagem que a senha está incorreta invés de falar que o email não existe.
+
 #Menu principal do projeto
 menu = {
     1 : "Cadastrar novo usuário ",
-    2.1 : "Login de usuário", 
-    2 : "Procurar um contato",
+    2 : "Login de usuário", 
     3 : "Atualizar contato ",
     4 : "Apagar contato",
     0 : "Sair"
@@ -30,47 +31,57 @@ menu = {
 #código principal do projeto ccom o hub e o loop de repetição com o menu
 def main():
     while True:
-        print("Menu: ")
-        for key,value in menu.items():
-            print(f"{key} - {value}")
-        opcao = int(input("Digite uma opção: "))
-
+        opcao = exibir_menu()
         if opcao == 1:
-            novo_contato()
+            cadastrar_usuario()
         elif opcao == 2:
-            procura_contato()
+            login_usuario()
         elif opcao == 3:
             atualiza_contato()
         elif opcao == 4:
             apaga_contato()
         elif opcao == 0:
-            print("Saindo do programa.")
-            break
+            sair()
         else:
-            print("Comando inválido.")
-#função para novos contatos
-def novo_contato():
-    nome = input("Digite o nome: ")
-    sobrenome = input("Digite o sobrenome: ")
-    telefone = input("Digite o telefone: ")
-    email = input("Digite o email: ")
+            print("Comando inválido.Tente novamente.")
 
-    with open("contatos.txt", "a") as arquivo: #a significa anexar
-        arquivo.write(f"{nome},{sobrenome},{telefone},{email}\n")
+#função para exibir o menu 
+def exibir_menu():
+    print("Menu: ")
+    for key,value in menu.items():
+        print(f"{key} - {value}")
+    opcao = int(input("Digite uma opção: "))
+    return opcao
 
-def procura_contato():
-    nome_procurado = input ("Digite o nome a ser procurado: ")
+#função para novos usuarios
 
-    with open("contatos.txt", "r") as arquivo:
-        linhas = arquivo.readlines()
-        nao_encontrado = True
-        for linha in linhas:
-            nome , sobrenome , telefone , email = linha.strip().split(",")
-            if nome_procurado.lower() in nome.lower():
-                print(f"Nome: {nome}, Sobrenome: {sobrenome}, Telefone: {telefone}, Email: {email}.")
+def cadastrar_usuario():
+    nome = input("Digite o nome de usuário: ")
+    senha = input("Digite sua senha: ")
+    senha_novamente = input("Confirme sua senha: ")
+
+    if senha == senha_novamente:
+        with open("usuarios.txt", "a") as arquivo: #a significa anexar
+            arquivo.write(f"{nome},{senha}\n")
+            print("Cadastro feito com sucesso.")
+    else:
+        print("As senhas não coincidem. Por favor, digite novamente.")
+#função para logar os usuários depois do cadastramento
+def login_usuario():
+    print("Logando o usuário: ")
+    nome_login = input ("Digite o nome de usuário: ")
+    senha_login = input("Digite a senha: ")
+
+    with open("usuarios.txt", "r") as arquivo: #puxar o arquivo no modo de leitura
+        conteudo = arquivo.readlines() #ler as linhas individualmente do arquivo
+    for linha in conteudo:
+        nome , senha = linha.strip().split(",") #dividir o arquivo de texto por mensagem que estejam separadas por virgula ou espaço
+        if nome_login.lower() == nome.lower() and senha_login.lower() == senha.lower(): #garante que tanto o nome quanto a senha sejam iguais aos cadastrados
+                print("Logado com sucesso.")
+                print(f"Seja bem-vindo {nome}.")
                 break
-        if nao_encontrado == True:
-            print("Contato não encontrado.")
+    else:
+        print("Erro no cadastro. Verifique os dados informados e tente novamente.") #não expoe os dados do usuário como se o nome ou senha já foram cadastrados
 
 def atualiza_contato():
     nome_atualizar = input("Digite o nome do contato a ser atualizado: ")
@@ -112,6 +123,10 @@ def apaga_contato():
         arquivo.seek(0)
         arquivo.writelines(linhas)
         arquivo.truncate()
+
+def sair():
+    print("Saindo do programa...")
+    exit()
 
 if __name__ == "__main__":
     main()

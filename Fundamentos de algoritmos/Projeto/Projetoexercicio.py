@@ -23,7 +23,7 @@ def main():
         elif opcao == 4:
             apaga_contato()
         elif opcao == 0:
-            print("Saindo do programa.")
+            sair()
             break
         else:
             print("Comando inválido.")
@@ -36,19 +36,19 @@ def novo_contato():
 
     with open("contatos.txt", "a") as arquivo:
         arquivo.write(f"{nome},{sobrenome},{telefone},{email}\n")
-
+        print("Usuário adicionado com sucesso.")
 def procura_contato():
     nome_procurado = input ("Digite o nome a ser procurado: ")
 
     with open("contatos.txt", "r") as arquivo:
-        linhas = arquivo.readlines()
-        nao_encontrado = True
-        for linha in linhas:
-            nome , sobrenome , telefone , email = linha.strip().split(",")
-            if nome_procurado.lower() in nome.lower():
-                print(f"Nome: {nome}, Sobrenome: {sobrenome}, Telefone: {telefone}, Email: {email}.")
-                break
-        if nao_encontrado == True:
+        conteudo = arquivo.readlines()
+
+    for linha in conteudo:
+        nome , sobrenome , telefone , email = linha.strip().split(",")
+        if nome_procurado.lower() in nome.lower():
+            print(f"Nome: {nome}, Sobrenome: {sobrenome}, Telefone: {telefone}, Email: {email}.")
+            break
+        else:
             print("Contato não encontrado.")
 
 def atualiza_contato():
@@ -92,5 +92,9 @@ def apaga_contato():
         arquivo.writelines(linhas)
         arquivo.truncate()
 
+def sair():
+    print("Saindo do programa.")
+    exit()
+    
 if __name__ == "__main__":
     main()
