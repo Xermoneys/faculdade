@@ -206,6 +206,41 @@ def musicas_buscadas():
     if not encontrou:
                 print("Música não pesquisada recentemente. Tente novamente.")
 
+#deepseek
+#with open("musicas_buscadas.txt", "r") as arquivo: # ler apenas o histórico
+#    historico = arquivo.readlines()
+#
+## Mostrar apenas o histórico
+#print("Músicas buscadas anteriormente:")
+#for linha in historico:
+#    try:
+#        musica, artista = linha.strip().split(",") 
+#        print(f"- {musica.strip().title()}, {artista.strip().title()}")
+#    except ValueError:
+#        continue  # Ignora linhas mal formatadas
+#
+#buscada = input("\nDigite o nome exato da música que deseja saber mais: ").strip().lower()
+#encontrou = False
+#
+## Buscar no arquivo completo
+#with open("musicas.txt", "r") as arquivo_completo:
+#    for linha in arquivo_completo:
+#        try:
+#            musica, artista, informacao = [x.strip().lower() for x in linha.split(",", 2)]  # Split em no máximo 2 vírgulas
+#            if buscada == musica:  # Comparação EXATA
+#                print(f"\nInformações completas:")
+#                print(f"Música: {musica.title()}")
+#                print(f"Artista: {artista.title()}")
+#                print(f"Detalhes: {informacao.capitalize()}")
+#                encontrou = True
+#                break  # Encerra após encontrar
+#        except ValueError:
+#            continue  # Ignora linhas mal formatadas
+#
+#if not encontrou:
+#    print("\nEsta música não consta no banco de dados completo.")
+
+
 def apaga_contato():
 
     nome_apagar = input("Digite o nome do contato que deseja apagar: ")
