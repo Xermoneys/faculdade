@@ -179,7 +179,6 @@ def procurar_artista():
             encontrou = True
     if not encontrou:
         print("Música não encontrada.")
-
 #Função para informações de músicas buscadas
 #pegar informação da musica buscada e procurar no banco de dados musica e artista a descrição da informação
 #abrir para "r" o arquivo musica.txt e ler somente a variavel informacao
