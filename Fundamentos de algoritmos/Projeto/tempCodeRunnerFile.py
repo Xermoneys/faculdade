@@ -1,2 +1,2 @@
 
-#função para novos contatos
+        musica , artista = linha.strip().lower().spli

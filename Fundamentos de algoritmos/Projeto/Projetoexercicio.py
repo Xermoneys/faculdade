@@ -9,7 +9,7 @@ menu = {
 
 def main():
     while True:
-        print("Menu: ")
+        print("Menu: \n")
         for key,value in menu.items():
             print(f"{key} - {value}")
         opcao = int(input("Digite uma opção: "))

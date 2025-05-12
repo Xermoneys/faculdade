@@ -25,7 +25,7 @@
 menu = {
     1 : "Cadastrar novo usuário ",
     2 : "Login de usuário", 
-    0 : "Sair"
+    0 : "Sair\n"
 }
 menu_login = {
     1 : "Buscar músicas",
@@ -34,14 +34,14 @@ menu_login = {
     4 : "Descurtir músicas",
     5 : "Gerenciar playlist",
     6 : "Visualizar histórico",
-    0 : "Sair do menu de usuário."
+    0 : "Sair do menu de usuário. \n"
 }
 menu_buscar_musicas = {
     1 : "Buscar por música",
     2 : "Buscar por artista",
-    0 : "Voltar ao menu de login."
+    0 : "Voltar ao menu de login. \n"
 }
-#código principal do projeto ccom o hub e o loop de repetição com o menu
+#código principal do projeto com o hub e o loop de repetição com o menu
 def main():
     while True:
         opcao = exibir_menu()
@@ -55,7 +55,7 @@ def main():
                     opcao_logado = exibir_menu_login()
                     if opcao_logado == 1:
                         while True:
-                            opcao_musica = exibir_opcoes_musica()
+                            opcao_musica = exibir_menu_musica()
                             if opcao_musica == 1:
                                 procurar_musicas()
                             elif opcao_musica == 2:
@@ -63,8 +63,7 @@ def main():
                             elif opcao_musica == 0:
                                 break
                     elif opcao_logado == 2:
-                        # Implementar listar informações
-                        pass
+                        musicas_buscadas()
                     elif opcao_logado == 3: 
                         # Implementar curtir músicas
                         pass
@@ -86,7 +85,7 @@ def main():
 
 #função para exibir o menu 
 def exibir_menu():
-    print("Menu: ")
+    print("Menu: \n")
     for key,value in menu.items():
         print(f"{key} - {value}")
     opcao = int(input("Digite uma opção: "))
@@ -94,15 +93,15 @@ def exibir_menu():
 
 #exibir menu depois de logar o usuario
 def exibir_menu_login():
-    print("Menu do usuário: ")
+    print("Menu do usuário: \n")
     for key,value in menu_login.items():
         print(f"{key} - {value}")
     opcao = int(input("Digite uma opção: "))
     return opcao
 
 #menu para exibir opções de pesquisas para o usuário
-def exibir_opcoes_musica():
-    print("Escolha uma opção: ")
+def exibir_menu_musica():
+    print("\nEscolha uma opção: \n")
     for key,value in menu_buscar_musicas.items():
         print(f"{key} - {value}")
     opcao = int(input("Digite uma opção: "))
@@ -134,8 +133,8 @@ def login_usuario():
     for linha in conteudo:
         nome , senha = linha.strip().split(",") #dividir o arquivo de texto por mensagem que estejam separadas por virgula ou espaço
         if nome_login.lower() == nome.lower() and senha_login.lower() == senha.lower(): #garante que tanto o nome quanto a senha sejam iguais aos cadastrados
-                print("Logado com sucesso.")
-                print(f"Seja bem-vindo {nome}.")
+                print("\nLogado com sucesso.")
+                print(f"Seja bem-vindo {nome}. \n")
                 return True
     else:
         print("Erro no login. Verifique os dados informados e tente novamente.") #não expoe os dados do usuário como se o nome ou senha já foram cadastrados
@@ -143,57 +142,69 @@ def login_usuario():
 
 #Função para procurar músicas pelo nome da música
 def procurar_musicas():
+    print("Procurando músicas:")
     musica_procurada = input("Digite o nome da música a ser procurada: ")
     encontrou = False
     with open("musicas.txt", "r") as arquivo:
         conteudo = arquivo.readlines()
     for linha in conteudo:
-        musica , artista = linha.strip().lower().split(",") 
+        musica , artista , informacao = linha.strip().lower().split(",") 
         musica = musica.strip().lower()
         artista = artista.strip().lower()
+        informacao = informacao.strip().lower()
         if musica_procurada.lower() in musica:
             print(f"Música(s): |{musica}| do(a) artista: |{artista}|encontrada no banco de dados.")
+            with open("musicas_buscadas.txt", "a" ) as arquivo:
+                arquivo.write(f"{musica},{artista}\n")
             encontrou = True
     if not encontrou:
         print("Música não encontrada.")
 
 #Função para procurar músicas pelo nome do artista
 def procurar_artista():
+    print("Procurando músicas por artista: ")
     musica_artista = input("Digite o nome do artista a ser procurado: ")
     encontrou = False #linha para a música ser achada
     with open("musicas.txt", "r") as arquivo:
         conteudo = arquivo.readlines()
     for linha in conteudo:
-        musica , artista = linha.strip().lower().split(",") 
+        musica , artista , informacao = linha.strip().lower().split(",") 
         musica = musica.strip().lower()
         artista = artista.strip().lower()
-
+        informacao = informacao.strip().lower()
         if musica_artista.lower() in artista.lower():
             print(f"Música(s):|{musica}| do(a) artista:|{artista}|encontrada no banco de dados.")
+            with open("musicas_buscadas.txt", "a" ) as arquivo:
+                arquivo.write(f"{musica}, {artista}\n")
             encontrou = True
     if not encontrou:
         print("Música não encontrada.")
 
-def atualiza_contato():
-    nome_atualizar = input("Digite o nome do contato a ser atualizado: ")
-    with open("contatos.txt", "r+") as arquivo:
-        linhas = arquivo.readlines()
-        for i, linha in enumerate(linhas): #i , linhas = range(len(linhas)), linhas
-            nome , sobrenome , telefone , email = linha.strip().split(",")
-            if nome_atualizar.lower() in nome.lower():
-                print(f"Nome: {nome}, Sobrenome: {sobrenome}, Telefone: {telefone}, Email: {email}.")
-                novo_nome = input("Digite o novo nome: ")
-                novo_sobrenome = input("Digite o novo sobrenome: ")
-                novo_telefone = input("Digite o novo telefone: ")
-                novo_email = input("Digite o novo email: ")
-
-                linhas[i] = f"{novo_nome}, {novo_sobrenome}, {novo_telefone}, {novo_email}\n"
-                break
-        else:
-            print("Contato não encontrado")
-
-        arquivo.seek(0)
-        arquivo.writelines(linhas)
+#Função para informações de músicas buscadas
+#pegar informação da musica buscada e procurar no banco de dados musica e artista a descrição da informação
+#abrir para "r" o arquivo musica.txt e ler somente a variavel informacao
+def musicas_buscadas():
+    with open("musicas_buscadas.txt", "r") as arquivo: # ler arquivo de historico de musicas
+        conteudo = arquivo.readlines()
+        for linha in conteudo:
+            musica , artista = linha.strip().lower().split(",") 
+            musica = musica.strip().lower()
+            artista = artista.strip().lower()
+            print(f"Música(s) buscada(s) anteriormente: {musica} , {artista}") #imprimir musicas buscadas inteiro
+            
+        buscada = input("\nDigite a música que deseja saber mais: ")
+        encontrou = False #flag para ver se a música foi encontrada
+    with open("musicas.txt" , "r") as arquivo_completo: #abrir arquivo de músicas para ler a informação
+        for linha in arquivo_completo:
+            musica , artista , informacao = linha.strip().lower().split(",") 
+            musica = musica.strip().lower()
+            artista = artista.strip().lower()
+            informacao = informacao.strip().lower()
+            if buscada.lower() in musica.lower(): #se a musica busca_buscada estiver dentro de musicas 
+                print(f"Para a música: |{musica}|, do(a) artista |{artista}| as informações são: | {informacao}|\n") #imprima a informação sobre a música
+                encontrou = True
+    if not encontrou:
+                print("Música não pesquisada recentemente. Tente novamente.")
 
 def apaga_contato():
 
