@@ -191,20 +191,6 @@ def musicas_buscadas():
             artista = artista.strip().lower()
             print(f"Música(s) buscada(s) anteriormente: {musica} , {artista}") #imprimir musicas buscadas inteiro
             
-        buscada = input("\nDigite a música que deseja saber mais: ")
-        encontrou = False #flag para ver se a música foi encontrada
-    with open("musicas.txt" , "r") as arquivo_completo: #abrir arquivo de músicas para ler a informação
-        for linha in arquivo_completo:
-            musica , artista , informacao = linha.strip().lower().split(",") 
-            musica = musica.strip().lower()
-            artista = artista.strip().lower()
-            informacao = informacao.strip().lower()
-            if buscada.lower() in musica.lower(): #se a musica busca_buscada estiver dentro de musicas 
-                print(f"Para a música: |{musica}|, do(a) artista |{artista}| as informações são: | {informacao}|\n") #imprima a informação sobre a música
-                encontrou = True
-    if not encontrou:
-                print("Música não pesquisada recentemente. Tente novamente.")
-
 #deepseek
 #with open("musicas_buscadas.txt", "r") as arquivo: # ler apenas o histórico
 #    historico = arquivo.readlines()
