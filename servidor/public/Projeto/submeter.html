@@ -7,15 +7,27 @@
     <title>Submeter</title>
 </head>
 <body>
-    <form method="post" action="/submeter_patente">
-        <label for="nome">Nome da marca:</label><br>
-        <input type="text" name="nome"><br>
-        <label for="proprietario">Nome do proprietário:</label><br>
-        <input type="text" name="proprietario"><br>
-        <label for="data_expedição">Data de expedição: </label><br>
-        <input type="date" name="expedicao"><br>
-        <input type="submit" value="Enviar">
-        
-    </form>
+        <div class="form-container">
+            <h1>Cadastro de Patente</h1>
+            <form method="post" action="/submeter_patente">
+                <div class="form-group">
+                    <label for="nome">Nome da marca:</label>
+                    <input type="text" name="nome" id="nome" placeholder="Digite o nome da marca">
+                </div>
+                
+                <div class="form-group">
+                    <label for="proprietario">Nome do proprietário:</label>
+                    <input type="text" name="proprietario" id="proprietario" placeholder="Nome completo do proprietário">
+                </div>
+                
+                <div class="form-group">
+                    <label for="expedicao">Data de expedição:</label>
+                    <input type="date" name="expedicao" id="expedicao">
+                </div>
+                
+                <button type="submit" class="submit-btn">Enviar</button>
+            </form>
+        </div>
+    </div>
 </body>
 </html>

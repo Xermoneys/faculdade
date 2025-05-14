@@ -15,7 +15,6 @@ body {
     background-color: #8EA8C3;
     justify-content: center;
     align-items: center;
-    flex-direction: row;
 }
 .Titulo-container > p {
     color: navy;
@@ -63,4 +62,13 @@ h1 {
     display: flex;
     justify-content: center;
     color: rgb(49, 49, 214);
+}
+.links_patente{
+    margin-left: 50px;
+}
+.links_patente > li{
+    font-size: 20px;
+    font-family: arial;
+    margin-top: 20px;
+    color: darkred;
 }

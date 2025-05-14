@@ -29,21 +29,20 @@ client.connect().then(() => {
     var proprietario 
     var expedicao 
 
-    app.post("/submeter_patente", function (req, resp) {
-        var data = {db_nome:req.body.nome, db_proprietário: req.body.proprietario, db_data_expedição: req.body.expedicao };
-        nome = data.db_nome
-        proprietario = data.db_proprietário
-        expedicao = data.db_data_expedição
-        usuarios.insertOne(data, function (err) {
-            if (err) {
-                resp.status(200).send("Erro ao cadastrar usuário!");
-            } else {
-                resp.status(200).send("Patente cadastrada com sucesso.");
-            }
-        });
+app.post("/submeter_patente", function (req, resp) {
+    var data = {db_nome:req.body.nome, db_proprietário: req.body.proprietario, db_data_expedição: req.body.expedicao };
+    nome = data.db_nome
+    proprietario = data.db_proprietário
+    expedicao = data.db_data_expedição
+    usuarios.insertOne(data, function (err) {
+        if (err) {
+            resp.status(200).send("Erro ao cadastrar usuário!");
+        } else {
+            resp.status(200).send("Patente cadastrada com sucesso.");
+        }
     });
-
-    app.get("/buscar_patentes", function(req, res) {
+});
+app.get("/buscar_patentes", function(req, res) {
     usuarios.find({}).toArray(function(err, result) {
         if (err) {
             res.status(500).send("Erro ao buscar patentes!");

@@ -4,41 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="avaliar.css" rel="stylesheet">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            buscar_Exibir_Patentes();
+        });
+    </script>
+    <script src="avaliar.js"></script>
     <title>Avaliar</title>
 </head>
 <body>
     <h1>Patentes Registradas</h1>
     <div id="dados-container">
         <!-- Os dados serão carregados aqui -->
-    </div>
-
-    <script>
-        fetch('/buscar_patentes')
-            .then(response => response.json())
-            .then(data => {
-                const container = document.getElementById('dados-container');
-                
-                if (data.length === 0) {
-                    container.innerHTML = "<p>Nenhuma patente registrada ainda.</p>";
-                    return;
-                }
-
-                data.forEach(patente => {
-                    container.innerHTML += `
-                        <div class="patente-item">
-                            <h3>${patente.db_nome}</h3>
-                            <p>Proprietário: ${patente.db_proprietário}</p>
-                            <p>Data de Expedição: ${new Date(patente.db_data_expedição).toLocaleDateString()}</p>
-                            <hr>
-                        </div>
-                    `;
-                });
-            })
-            .catch(error => {
-                console.error('Erro:', error);
-                document.getElementById('dados-container').innerHTML = 
-                    "<p>Erro ao carregar os dados. Tente recarregar a página.</p>";
-            });
-    </script>
+    </div>       
 </body>
 </html>
