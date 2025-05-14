@@ -36,9 +36,9 @@ client.connect().then(() => {
         expedicao = data.db_data_expedição
         usuarios.insertOne(data, function (err) {
             if (err) {
-                resp.status(500).send("Erro ao cadastrar usuário!");
+                resp.status(200).send("Erro ao cadastrar usuário!");
             } else {
-                resp.redirect("/Projeto/avaliar.html");
+                resp.status(200).send("Patente cadastrada com sucesso.");
             }
         });
     });

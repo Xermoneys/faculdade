@@ -7,6 +7,38 @@
     <title>Listar</title>
 </head>
 <body>
-    
+     <h1>Lista de Patentes Registradas</h1>
+    <div id="dados-container">
+        <!-- Os dados serão carregados aqui -->
+    </div>
+
+    <script>
+        fetch('/buscar_patentes')
+            .then(response => response.json())
+            .then(data => {
+                const container = document.getElementById('dados-container');
+                
+                if (data.length === 0) {
+                    container.innerHTML = "<p>Nenhuma patente registrada ainda.</p>";
+                    return;
+                }
+
+                data.forEach(patente => {
+                    container.innerHTML += `
+                        <div class="patente-item">
+                            <h3>${patente.db_nome}</h3>
+                            <p>Proprietário: ${patente.db_proprietário}</p>
+                            <p>Data de Expedição: ${new Date(patente.db_data_expedição).toLocaleDateString()}</p>
+                            <hr>
+                        </div>
+                    `;
+                });
+            })
+            .catch(error => {
+                console.error('Erro:', error);
+                document.getElementById('dados-container').innerHTML = 
+                    "<p>Erro ao carregar os dados. Tente recarregar a página.</p>";
+            });
+    </script>
 </body>
 </html>
