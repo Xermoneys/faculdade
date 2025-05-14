@@ -38,11 +38,21 @@ client.connect().then(() => {
             if (err) {
                 resp.status(500).send("Erro ao cadastrar usuário!");
             } else {
-                resp.status(200).send("Usuário cadastrado com sucesso!");
+                resp.redirect("/Projeto/avaliar.html");
             }
         });
     });
-    console.log(nome)
+
+    app.get("/buscar_patentes", function(req, res) {
+    usuarios.find({}).toArray(function(err, result) {
+        if (err) {
+            res.status(500).send("Erro ao buscar patentes!");
+        } else {
+            res.json(result);
+        }
+    });
+});
+
     app.post("/logar_usuario", function (req, resp) {
         var data = { db_login: req.body.login, db_senha: req.body.senha };
         usuarios.find(data).toArray(function (err, items) {
