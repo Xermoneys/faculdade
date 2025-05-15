@@ -7,70 +7,49 @@
     <title>Submeter</title>
   </head>
   <body>
-    <div class="form-container">
-      <h1>Cadastro de Patente</h1>
-      <form id="patenteForm">
-        <div class="form-group">
-          <label for="nome">Nome da marca:</label>
-          <input
-            type="text"
-            name="nome"
-            id="nome"
-            placeholder="Digite o nome da marca"
-          />
-        </div>
-        <div class="form-group">
-          <label for="proprietario">Nome do proprietário:</label>
-          <input
-            type="text"
-            name="proprietario"
-            id="proprietario"
-            placeholder="Nome completo do proprietário"
-          />
-        </div>
+    <div class="site-todo">
+      <div class="form-container">
+        <h1>Cadastro de Patente</h1>
+        <form id="patenteForm">
+          <div class="form-margem">
+            <label for="nome">Nome da marca:</label>
+            <input
+              type="text"
+              name="nome"
+              id="nome"
+              placeholder="Digite o nome da marca" 
+              required
+            />
+          </div>
+          <div class="form-margem">
+            <label for="proprietario">Nome do proprietário:</label>
+            <input
+              type="text"
+              name="proprietario"
+              id="proprietario"
+              placeholder="Nome completo do proprietário"
+              required
+            />
+          </div>
 
-        <div class="form-group">
-          <label for="expedicao">Data de expedição:</label>
-          <input type="date" name="expedicao" id="expedicao" />
-        </div>
-
-        <button type="submit" class="submit-btn">Enviar</button>
-      </form>
-    </div>
-    <script>
-      document
-        .getElementById("patenteForm")
-        .addEventListener("submit", async function (e) {
-          e.preventDefault(); // Isso é CRUCIAL para evitar o redirecionamento
-
-          try {
-            const formData = {
-              nome: document.getElementById("nome").value,
-              proprietario: document.getElementById("proprietario").value,
-              expedicao: document.getElementById("expedicao").value,
-            };
-
-            const response = await fetch("/submeter_patente", {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify(formData),
-            });
-
-            const result = await response.json();
-
-            if (result.success) {
-              window.alert(result.message); // Mostra alerta de sucesso
-              document.getElementById("patenteForm").reset(); // Limpa o formulário
-            } else {
-              window.alert(result.message); // Mostra alerta de erro
-            }
-          } catch (error) {
-            console.error("Erro:", error);
-            alert("Ocorreu um erro inesperado ao enviar o formulário");
-          }
-        });
-    </script>
+          <div class="form-margem">
+            <label for="expedicao">Data de expedição:</label>
+            <input type="date" 
+            name="expedicao" 
+            id="expedicao" 
+            required 
+            />
+          </div>
+          <button type="submit" class="button">Enviar</button>
+          <a href="software.html" title="Volta para a página software">
+            <p>Voltar para página do software</p>
+          </a>
+        </form>
+      </div>
+      <div class="voltar">
+        
+      </div>
+      <script src="funções.js" type="module"></script>
+  </div>
   </body>
 </html>

@@ -38,3 +38,72 @@ function buscar_Exibir_Patentes(containerId = 'dados-container') {
         });
 }
 
+// Função principal para configurar o formulário
+export function setupPatenteForm() {
+    const form = document.getElementById("patenteForm");
+    
+    if (!form) {
+        console.error("Formulário não encontrado!");
+        return;
+    }
+
+    form.addEventListener("submit", handleFormSubmit);
+}
+
+// Manipulador do envio do formulário
+async function handleFormSubmit(e) {
+    e.preventDefault();
+
+    try {
+        const formData = getFormData();
+        const response = await submitFormData(formData);
+        handleResponse(response);
+    } catch (error) {
+        handleError(error);
+    }
+}
+
+// Coleta os dados do formulário
+function getFormData() {
+    return {
+        nome: document.getElementById("nome").value.trim(),
+        proprietario: document.getElementById("proprietario").value.trim(),
+        expedicao: document.getElementById("expedicao").value
+    };
+}
+
+// Envia os dados para o servidor
+async function submitFormData(data) {
+    const response = await fetch("/submeter_patente", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+    });
+    return await response.json();
+}
+
+// Processa a resposta do servidor
+function handleResponse(result) {
+    if (result.success) {
+        showAlert("success", result.message);
+        document.getElementById("patenteForm").reset();
+    } else {
+        showAlert("error", result.message);
+    }
+}
+
+// Manipula erros
+function handleError(error) {
+    console.error("Erro:", error);
+    showAlert("error", "Ocorreu um erro inesperado ao enviar o formulário");
+}
+
+// Mostra mensagem (substitua por um modal bonito se preferir)
+function showAlert(type, message) {
+    alert(message); // Você pode substituir por SweetAlert2 ou outro
+}
+
+// Inicializa o formulário quando o DOM estiver pronto
+document.addEventListener("DOMContentLoaded", setupPatenteForm);
