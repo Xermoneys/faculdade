@@ -37,4 +37,4 @@ function buscar_Exibir_Patentes(containerId = 'dados-container') {
                 "<p>Erro ao carregar os dados. Tente recarregar a página.</p>";
         });
 }
-        
+
