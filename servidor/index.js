@@ -44,12 +44,13 @@ app.post("/submeter_patente", function (req, resp) {
         }
     });
 });
-app.get("/buscar_patentes", function(req, res) {
-    usuarios.find({}).toArray(function(err, result) {
+
+app.get("/buscar_patentes", function(req, resp) {
+    usuarios.find({}).toArray(function(err, patentes) {
         if (err) {
-            res.status(500).send("Erro ao buscar patentes!");
+            resp.status(500).json({ success: false, message: "Erro ao buscar patentes" });
         } else {
-            res.json(result);
+            resp.status(200).json({ success: true, patentes: patentes });
         }
     });
 });

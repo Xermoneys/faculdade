@@ -3,20 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="funções.js" rel="stylesheet">
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            buscar_Exibir_Patentes();
-        });
-    </script>
-    
+    <link href="avaliar.css" rel="stylesheet">
     <title>Avaliar</title>
 </head>
 <body>
-    <h1>Patentes Registradas</h1>
-    <div id="dados-container">
-        <!-- Os dados serão carregados aqui -->
-    </div>   
-    <script src="funções.js"></script>    
+    <div class="header">
+        <h1>Patentes Cadastradas</h1>
+        <a href="submeter.html" class="add-button">+ Nova Patente</a>
+    </div>
+    
+    <div class="patentes-container">
+        <div id="patentes-table">
+            <!-- Os dados serão inseridos aqui via JavaScript -->
+        </div>
+    </div>
+
+    <script>
+        async function carregarPatentes() {
+            try {
+                const response = await fetch('/buscar_patentes');
+                const result = await response.json();
+                
+                const container = document.getElementById('patentes-table');
+                
+                if (result.success && result.patentes.length > 0) {
+                    let html = `
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Nome da Marca</th>
+                                    <th>Proprietário</th>
+                                    <th>Data de Expedição</th>
+                                </tr>
+                            </thead>
+                            <tbody>`;
+                    
+                    result.patentes.forEach(patente => {
+                        // Formata a data corretamente
+                        const dataExpedicao = new Date(patente.db_data_expedição);
+                        const dataFormatada = dataExpedicao.toLocaleDateString('pt-BR');
+                        
+                        html += `
+                            <tr>
+                                <td>${patente.db_nome || 'N/A'}</td>
+                                <td>${patente.db_proprietário || 'N/A'}</td>
+                                <td class="date-cell">${dataFormatada}</td>
+                            </tr>`;
+                    });
+                    
+                    html += `</tbody></table>`;
+                    container.innerHTML = html;
+                } else {
+                    container.innerHTML = '<div class="empty-message">Nenhuma patente cadastrada ainda.</div>';
+                }
+            } catch (error) {
+                console.error('Erro ao carregar patentes:', error);
+                container.innerHTML = '<div class="empty-message">Ocorreu um erro ao carregar as patentes.</div>';
+            }
+        }
+
+        // Carrega as patentes quando a página é aberta
+        window.onload = carregarPatentes;
+    </script>
 </body>
 </html>

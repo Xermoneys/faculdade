@@ -1,5 +1,4 @@
-
-function buscar_Exibir_Patentes(containerId = 'dados-container') {
+ function buscar_Exibir_Patentes(containerId = 'dados-container') {
     fetch('/buscar_patentes')
         .then(response => {
             if (!response.ok) {
