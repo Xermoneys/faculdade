@@ -7,38 +7,20 @@
     <title>Listar</title>
 </head>
 <body>
-     <h1>Lista de Patentes Registradas</h1>
-    <div id="dados-container">
-        <!-- Os dados serão carregados aqui -->
+    <div class="header">
+        <h1>Patentes Avaliadas</h1>
+        <a href="avaliar.html" class="add-button">← Voltar</a>
     </div>
 
-    <script>
-        fetch('/buscar_patentes')
-            .then(response => response.json())
-            .then(data => {
-                const container = document.getElementById('dados-container');
-                
-                if (data.length === 0) {
-                    container.innerHTML = "<p>Nenhuma patente registrada ainda.</p>";
-                    return;
-                }
+    <div class="patentes-container">
+        <div id="patentes-listadas">
+            <!-- As patentes avaliadas serão carregadas aqui -->
+        </div>
+    </div>
 
-                data.forEach(patente => {
-                    container.innerHTML += `
-                        <div class="patente-item">
-                            <h3>${patente.db_nome}</h3>
-                            <p>Proprietário: ${patente.db_proprietário}</p>
-                            <p>Data de Expedição: ${new Date(patente.db_data_expedição).toLocaleDateString()}</p>
-                            <hr>
-                        </div>
-                    `;
-                });
-            })
-            .catch(error => {
-                console.error('Erro:', error);
-                document.getElementById('dados-container').innerHTML = 
-                    "<p>Erro ao carregar os dados. Tente recarregar a página.</p>";
-            });
-    </script>
+    <script type="module">
+  import { carregarPatentesAvaliadas } from './funcao.js';
+  document.addEventListener("DOMContentLoaded", carregarPatentesAvaliadas);
+</script>
 </body>
 </html>

@@ -16,57 +16,64 @@ const app = express();
 app.use(cors()); // Habilita CORS para todas as rotas
 app.use(express.json()); 
 app.use(express.urlencoded({ extended: true })); 
-
 app.use(express.static('./public'));
 
-var server = http.createServer(app);
+const server = http.createServer(app);
 server.listen(3000, () => {
-console.log("servidor rodando...");
+    console.log("servidor rodando...");
 });
 
 client.connect().then(() => {
-    var dbo = client.db("exemplo_bd");
-    var usuarios = dbo.collection("usuarios");
+    const dbo = client.db("exemplo_bd");
+    const usuarios = dbo.collection("usuarios");
 
 
-app.post("/submeter_patente", function (req, resp) {
-    var data = {
-        db_nome: req.body.nome, 
-        db_proprietário: req.body.proprietario, 
-        db_data_expedição: req.body.expedicao 
-    };
-    
-    usuarios.insertOne(data, function (err) {
-        if (err) {
-            resp.status(400).json({ success: false, message: "Erro ao cadastrar patente!" });
-        } else {
-           resp.status(200).json({ success: true, message: "Patente cadastrada com sucesso!" });
-        }
-    });
-});
+app.post("/submeter_patente", (req, resp) => {
+        const data = {
+            db_nome: req.body.nome,
+            db_proprietário: req.body.proprietario,
+            db_data_expedição: req.body.expedicao
+        };
 
-app.get("/buscar_patentes", function(req, resp) {
-    usuarios.find({}).toArray(function(err, patentes) {
-        if (err) {
-            resp.status(500).json({ success: false, message: "Erro ao buscar patentes" });
-        } else {
-            resp.status(200).json({ success: true, patentes: patentes });
-        }
-    });
-});
-
-    app.post("/logar_usuario", function (req, resp) {
-        var data = { db_login: req.body.login, db_senha: req.body.senha };
-        usuarios.find(data).toArray(function (err, items) {
+        usuarios.insertOne(data, (err) => {
             if (err) {
-                resp.status(500).send("Erro ao logar usuário!");
-            } else if (items.length == 0) {
-                resp.status(200).send("Usuário/senha não encontrado!");
+                resp.status(400).json({ success: false, message: "Erro ao cadastrar patente!" });
             } else {
-                resp.status(200).send("Usuário logado com sucesso!");
+                resp.status(200).json({ success: true, message: "Patente cadastrada com sucesso!" });
             }
         });
     });
+
+ app.get("/buscar_patentes", (req, resp) => {
+        usuarios.find({}).toArray((err, patentes) => {
+            if (err) {
+                resp.status(500).json({ success: false, message: "Erro ao buscar patentes" });
+            } else {
+                resp.status(200).json({ success: true, patentes });
+            }
+        });
+    });
+
+    const { ObjectId } = require('mongodb');
+
+app.post("/atualizar_status", async (req, resp) => {
+    const { id, status } = req.body;
+
+    if (!id || !status) {
+        return resp.status(400).json({ success: false, message: "ID ou status ausente" });
+    }
+
+    try {
+        await usuarios.updateOne(
+            { _id: new ObjectId(id) },
+            { $set: { db_status: status } }
+        );
+        resp.status(200).json({ success: true, message: "Status atualizado" });
+    } catch (error) {
+        console.error("Erro ao atualizar status:", error);
+        resp.status(500).json({ success: false, message: "Erro interno do servidor" });
+    }
+});
 
 }).catch(err => {
     console.error("Erro ao conectar no MongoDB:", err);

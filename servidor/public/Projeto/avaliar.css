@@ -1,78 +1,129 @@
 body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f9f9f9;
-        }
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+line-height: 1.6;
+color: #333;
+max-width: 1200px;
+margin: 0 auto;
+padding: 20px;
+background-color: #f9f9f9;
+}
+h1 {
+color: #2c3e50;
+text-align: center;
+margin-bottom: 30px;
+font-weight: 600;
+}
         
-        h1 {
-            color: #2c3e50;
-            text-align: center;
-            margin-bottom: 30px;
-            font-weight: 600;
-        }
-        
-        .patentes-container {
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-        }
-        
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        
-        th {
-            background-color: #3498db;
-            color: white;
-            padding: 15px;
-            text-align: left;
-            font-weight: 500;
-        }
-        
-        td {
-            padding: 12px 15px;
-            border-bottom: 1px solid #e0e0e0;
-        }
-        
-        tr:hover {
-            background-color: #f5f5f5;
-        }
-        
-        .empty-message {
-            text-align: center;
-            padding: 30px;
-            color: #7f8c8d;
-            font-style: italic;
-        }
-        
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        
-        .add-button {
-            background-color: #2ecc71;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 4px;
-            cursor: pointer;
-            text-decoration: none;
-            font-weight: 500;
-        }
-        
-        .add-button:hover {
-            background-color: #27ae60;
-        }
-        
-        .date-cell {
-            white-space: nowrap;
-        }
+.patentes-container {
+background: white;
+border-radius: 8px;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+overflow: hidden;
+}
+
+table {
+width: 100%;
+border-collapse: collapse;
+}
+
+th {
+background-color: #3498db;
+color: white;
+padding: 15px;
+text-align: left;
+font-weight: 500;
+}
+
+td {
+padding: 12px 15px;
+border-bottom: 1px solid #e0e0e0;
+}
+
+tr:hover {
+background-color: #f5f5f5;
+}
+
+.empty-message {
+text-align: center;
+padding: 30px;
+color: #7f8c8d;
+font-style: italic;
+}
+
+.header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 20px;
+}
+
+.add-button {
+background-color: #2ecc71;
+color: white;
+border: none;
+padding: 10px 20px;
+border-radius: 4px;
+cursor: pointer;
+text-decoration: none;
+font-weight: 500;
+}
+
+.add-2button {
+background-color: #cc2eaa;
+color: white;
+border: none;
+padding: 10px 20px;
+border-radius: 4px;
+cursor: pointer;
+text-decoration: none;
+font-weight: 500;
+}
+
+.add-2button:hover{
+    background-color: #a11583;
+}
+
+.add-button:hover {
+background-color: #27ae60;
+}
+
+.date-cell {
+white-space: nowrap;
+}
+td.status-aceito {
+    color: #2ecc71;
+    font-weight: bold;
+}
+
+td.status-recusado {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+/* Estilo dos botões de Aceitar/Recusar */
+.status-btn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    margin: 2px;
+    cursor: pointer;
+    font-weight: 500;
+    color: white;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.status-btn[data-status="Aceito"] {
+    background-color: #2ecc71;
+}
+
+.status-btn[data-status="Aceito"]:hover {
+    background-color: #27ae60;
+}
+
+.status-btn[data-status="Recusado"] {
+    background-color: #e74c3c;
+}
+
+.status-btn[data-status="Recusado"]:hover {
+    background-color: #c0392b;
+}
