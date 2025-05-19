@@ -1,14 +1,20 @@
+#Autor: Luciano Ventura Monegatto
+# 1 semestre de ciência da computação
+
 # Cadastrar novo usuário - Feito
 # Login de usuário - Feito
 # Buscar músicas por nome - Feito
 # Listar informações de músicas buscadas- Feito
 # Curtir e descurtir músicas - Feito
-# Gerenciar playlists*
+# Gerenciar playlists* - Feito
 # Visualizar histórico** - Feito
 
 #Gerenciar playlist:
-#• Criar, editar, excluir playlists
-#• Adicionar/remover músicas de playlists
+#• Criar, -Feito
+#editar, -Feito
+#excluir playlists - Feito
+#• Adicionar músicas de playlist - Feito
+#remover músicas de playlists - Feito
 #Visualizar Histórico:
 #• Visualizar lista de músicas curtidas - Feito
 #• Visualizar lista de músicas descurtidas - Feito
@@ -17,6 +23,8 @@
 #'w': escrita (sobrescreve o arquivo se já existir).
 #'a': anexar (acrescenta ao final do arquivo se já existir).
 #'r+': leitura e escrita.
+
+#Em cada etapa das funções os números estão no relatório para explicação
 
 #Para não acontecer o vazamento de senha é recomendavel dar a mensagem que a senha está incorreta invés de falar que o email não existe.
 
@@ -97,7 +105,7 @@ def main():
             print("Comando inválido. Tente novamente.")
 
 #-----------------------------------------------------------------------------------------------------------------------
-# Menus do programa
+# 1.Menus do programa
 
 #função para exibir o menu 
 def exibir_menu():
@@ -158,7 +166,8 @@ def exibir_menu_historico():
 #------------------------------------------------------------------------------------------------------------------------------------------
 
 #Funções do programa
-#função para novos usuarios
+
+#2.função para novos usuarios
 
 def cadastrar_usuario():
     print("\nCadastrando o usuário...")
@@ -491,19 +500,17 @@ def playlist():
 def historico():
     def lista_curtidas():
         with open("musicas_curtidas.txt", "r") as arquivo:
-            conteudo = arquivo.readlines()
+            conteudo = [linha.strip() for linha in arquivo if linha.strip()]
         print("\nLista de músicas curtidas:")
-        for linha in conteudo:
-            musica, artista = linha.strip().split(",")
-            print(f"Música(s): |{musica.strip()}| do(a) artista: |{artista.strip()}|.")
+        for i, musica  in enumerate(conteudo):
+            print(f"{i}. |{musica}|.")
 
     def lista_descurtidas():
         with open("musicas_descurtidas.txt", "r") as arquivo:
-            conteudo = arquivo.readlines()
-        print("\nLista de músicas que foram descurtidas:")
-        for linha in conteudo:
-            musica, artista = linha.strip().split(",")
-            print(f"Música(s): |{musica.strip()}| do(a) artista: |{artista.strip()}|.")
+            conteudo = [linha.strip() for linha in arquivo if linha.strip()]
+        print("\nLista de músicas descurtidas:")
+        for i, musica  in enumerate(conteudo):
+            print(f"{i}. |{musica}|.")
 
     while True:
         opcao_historico = exibir_menu_historico()
