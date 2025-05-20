@@ -184,7 +184,7 @@ def cadastrar_usuario():
         else:
             print("As senhas não coincidem. Por favor, digite novamente.")
         
-#função para logar os usuários depois do cadastramento
+#3.função para logar os usuários depois do cadastramento
 def login_usuario():
     print("\nLogando o usuário... ")
     nome_login = input ("\nDigite o nome de usuário: ")
@@ -202,9 +202,9 @@ def login_usuario():
         print("Erro no login. Verifique os dados informados e tente novamente.") #não expoe os dados do usuário como se o nome ou senha já foram cadastrados
         return False
 
-#Função para procurar músicas pelo nome da música
+#4.Função para procurar músicas pelo nome da música ou artista
 def buscar():
-    def buscar_musicas():
+    def buscar_musicas(): #4.1 Função buscar por música
         print("Procurando músicas por nome da música...")
         musica_procurada = input("Digite o nome da música a ser procurada: ")
         encontrou = False #flag para que faça a verificação se achou a musica
@@ -220,7 +220,7 @@ def buscar():
         if not encontrou:
             print("Música não encontrada.")
 
-    #Função para procurar músicas pelo nome do artista
+    #4.2.Função para procurar músicas pelo nome do artista
     def buscar_por_artista():
         print("\nProcurando músicas por artista... ")
         musica_artista = input("\nDigite o nome do artista que deseja procurar: ")
@@ -245,20 +245,19 @@ def buscar():
             buscar_por_artista()
         elif opcao_musica == 0:
             break
-#Função para informações de músicas buscadas
-#pegar informação da musica buscada e procurar no banco de dados musica e artista a descrição da informação
-#abrir para "r" o arquivo musica.txt e ler somente a variavel informacao
-def musicas_buscadas():
+#5.Função para informações de músicas buscadas
+#pegar informação da musica buscada e procurar no banco de dados musica e artista 
+def musicas_buscadas(): 
     with open("musicas_buscadas.txt", "r") as arq_musicas:
         musicas_buscadas = [linha.strip() for linha in arq_musicas if linha.strip()]
 
     print("\nMúsicas buscadas anteriormente: ")
     for i, musica in enumerate(musicas_buscadas, 1):
-        print(f"{i}. {musica}") #imprimir musicas buscadas inteiro
+        print(f"{i}. {musica}") #imprimir musicas buscadas inteiro enumerando
             
-#Função para curtir músicas
+#6.Função para curtir e descurtir músicas
 def gerenciar_musicas():
-    def curtir_musicas():
+    def curtir_musicas(): #6.1 Função para curtir as músicas
         with open("musicas.txt", "r") as arquivo:#ler arquivo de músicas completo para depois escolher quais músicas serão curtidas
             conteudo = arquivo.readlines()
 
@@ -281,7 +280,7 @@ def gerenciar_musicas():
         if not encontrou:
             print("\nMúsica não encontrada.")
 
-    #Função para descurtir músicas
+    #6.2 Função para descurtir músicas
     def descurtir_musicas():
         with open("musicas_curtidas.txt", "r") as arquivo: #lê o arquivo de musicas curtidas primeiro para o usuario poder descurtir depois
             musicas_curtidas = arquivo.readlines()
@@ -325,10 +324,10 @@ def gerenciar_musicas():
         elif opcao_curtir_descutir == 0:
             break
         
-#Função para gerenciar a playlist
+#7.Função para gerenciar a playlist
 def playlist():
-    #função para criação de playlists
-    def nova_playlist():
+    #7.1função para criação de playlists
+    def nova_playlist(): 
         titulo = input("Digite um nome para a nova playlist que deseja criar: ")
         nome_arquivo = f"{titulo}_playlist.txt" #ficar mais fácil para adicionar o nome dado pelo usuário e especificar que é uma playlist criada por ele
 
@@ -341,7 +340,7 @@ def playlist():
             registro.write(nome_arquivo + "\n")
 
         print(f"\nA playlist '{nome_arquivo}' foi criada com sucesso.")
-    #função para editar a playlist
+    #7.2 função para editar a playlist
     def editar_playlist():
             def adicionar_musicas_playlist():
                 if not os.path.exists("lista_de_playlists.txt"): #verifica se existe alguma playlist para ser editada
@@ -446,7 +445,7 @@ def playlist():
                elif opcao_editar == 0:
                    break    
 
-    #função para deletar playlists
+    #7.3 função para deletar playlists
     def deletar_playlist():
         if not os.path.exists("lista_de_playlists.txt"): #se não está no caminho(path) que existe então não existe nenhuma playlist para ser escluída
             print("\nNenhuma playlist para excluir.")
