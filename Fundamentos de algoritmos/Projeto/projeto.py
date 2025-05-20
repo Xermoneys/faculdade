@@ -84,19 +84,20 @@ def main():
         elif opcao == 1:
             cadastrar_usuario()
         elif opcao == 2:
-            if login_usuario():
+            nome_login = login_usuario()
+            if nome_login:
                 while True:
                     opcao_logado = exibir_menu_login()
                     if opcao_logado == 1:
-                        buscar()
+                        buscar(nome_login)
                     elif opcao_logado == 2:
-                        musicas_buscadas()
+                        musicas_buscadas(nome_login)
                     elif opcao_logado == 3:
-                        gerenciar_musicas()
+                        gerenciar_musicas(nome_login)
                     elif opcao_logado == 4:
-                        playlist()
+                        playlist(nome_login)
                     elif opcao_logado == 5:
-                        historico()  
+                        historico(nome_login)  
                     elif opcao_logado == 0:
                         break
                     else:
@@ -197,7 +198,7 @@ def login_usuario():
         if nome_login.lower() == nome.lower() and senha_login.lower() == senha.lower(): #garante que tanto o nome quanto a senha sejam iguais aos cadastrados
                 print("\nLogado com sucesso.")
                 print(f"Seja bem-vindo {nome}. \n")
-                return True
+                return nome_login
     else:
         print("Erro no login. Verifique os dados informados e tente novamente.") #não expoe os dados do usuário como se o nome ou senha já foram cadastrados
         return False
@@ -214,7 +215,7 @@ def buscar(nome_login):
             musica , artista = linha.strip().lower().split(",") 
             if musica_procurada.lower() in musica:
                 print(f"Música(s): |{musica.strip().lower()}| do(a) artista: |{artista.strip().lower()}|encontrada no banco de  dados.")
-                with open("musicas_buscadas.txt", "a" ) as arquivo:
+                with open(f"{nome_login}_musicas_buscadas.txt", "a" ) as arquivo:
                     arquivo.write(f"{musica},{artista}\n")
                 encontrou = True
         if not encontrou:
@@ -231,7 +232,7 @@ def buscar(nome_login):
             musica , artista = linha.strip().lower().split(",") 
             if musica_artista.lower() in artista.lower():
                 print(f"Música(s):|{musica.strip().lower()}| do(a) artista:|{artista.strip().lower()}|encontrada no banco de dados. ")
-                with open("musicas_buscadas.txt", "a" ) as arquivo:
+                with open(f"{nome_login}_musicas_buscadas.txt", "a" ) as arquivo:
                     arquivo.write(f"{musica}, {artista}\n")
                 encontrou = True
         if not encontrou:
@@ -240,15 +241,15 @@ def buscar(nome_login):
     while True:
         opcao_musica = exibir_menu_musica()
         if opcao_musica == 1:
-            buscar_musicas()
+            buscar_musicas(nome_login)
         elif opcao_musica == 2:
-            buscar_por_artista()
+            buscar_por_artista(nome_login)
         elif opcao_musica == 0:
             break
 #5.Função para informações de músicas buscadas
 #pegar informação da musica buscada e procurar no banco de dados musica e artista 
 def musicas_buscadas(nome_login): 
-    with open("musicas_buscadas.txt", "r") as arq_musicas:
+    with open(f"{nome_login}_musicas_buscadas.txt", "r") as arq_musicas:
         musicas_buscadas = [linha.strip() for linha in arq_musicas if linha.strip()]
 
     print("\nMúsicas buscadas anteriormente: ")
@@ -272,7 +273,7 @@ def gerenciar_musicas(nome_login):
         for linha in conteudo:
             musica, artista = linha.strip().split(",")
             if nome_curtir in musica.lower():
-                with open("musicas_curtidas.txt", "a") as arquivo:
+                with open(f"{nome_login}_musicas_curtidas.txt", "a") as arquivo:
                     arquivo.write(f"{musica.strip()}, {artista.strip()}\n")
                 print(f"\nVocê curtiu: |{musica}| - |{artista}|")
                 encontrou = True
@@ -282,7 +283,7 @@ def gerenciar_musicas(nome_login):
 
     #6.2 Função para descurtir músicas
     def descurtir_musicas(nome_login):
-        with open("musicas_curtidas.txt", "r") as arquivo: #lê o arquivo de musicas curtidas primeiro para o usuario poder descurtir depois
+        with open(f"{nome_login}_musicas_curtidas.txt", "r") as arquivo: #lê o arquivo de musicas curtidas primeiro para o usuario poder descurtir depois
             musicas_curtidas = arquivo.readlines()
 
         print("\nLista de músicas curtidas:")
@@ -306,11 +307,11 @@ def gerenciar_musicas(nome_login):
 
         if encontrou:
             # sobrescreve o arquivo de músicas curtidas com as restantes
-            with open("musicas_curtidas.txt", "w") as arquivo:
+            with open(f"{nome_login}_musicas_curtidas.txt", "w") as arquivo:
                 arquivo.writelines(novas_linhas)
 
             # adiciona as músicas descurtidas ao final do arquivo
-            with open("musicas_descurtidas.txt", "a") as arquivo:
+            with open(f"{nome_login}_musicas_descurtidas.txt", "a") as arquivo:
                 arquivo.writelines(musicas_removidas)
         else:
             print("\nMúsica não encontrada na lista de curtidas.")
@@ -318,9 +319,9 @@ def gerenciar_musicas(nome_login):
     while True: 
         opcao_curtir_descutir = exibir_menu_curtir_descurtir()
         if opcao_curtir_descutir == 1:
-            curtir_musicas()
+            curtir_musicas(nome_login)
         elif opcao_curtir_descutir == 2:
-            descurtir_musicas()
+            descurtir_musicas(nome_login)
         elif opcao_curtir_descutir == 0:
             break
         
@@ -329,25 +330,25 @@ def playlist(nome_login):
     #7.1função para criação de playlists
     def nova_playlist(nome_login): 
         titulo = input("Digite um nome para a nova playlist que deseja criar: ")
-        nome_arquivo = f"{titulo}_playlist.txt" #ficar mais fácil para adicionar o nome dado pelo usuário e especificar que é uma playlist criada por ele
+        nome_arquivo = f"{nome_login}_{titulo}_playlist.txt" #ficar mais fácil para adicionar o nome dado pelo usuário e especificar que é uma playlist criada por ele
 
         # criação do arquivo de playlist
         with open(nome_arquivo, "w") as arq:
             pass  # nenhuma música no início
 
         # registro da playlist no índice
-        with open("lista_de_playlists.txt", "a") as registro:
+        with open(f"{nome_login}_lista_de_playlists.txt", "a") as registro:
             registro.write(nome_arquivo + "\n")
 
         print(f"\nA playlist '{nome_arquivo}' foi criada com sucesso.")
     #7.2 função para editar a playlist
     def editar_playlist(nome_login):
             def adicionar_musicas_playlist():
-                if not os.path.exists("lista_de_playlists.txt"): #verifica se existe alguma playlist para ser editada
+                if not os.path.exists(f"{nome_login}_lista_de_playlists.txt"): #verifica se existe alguma playlist para ser editada
                     print("\nNenhuma playlist disponível para ser editada.")
                     return
                 #pega o caminho do .txt que armazena o nome das playlists criadas anteriormente pelo usuário
-                with open("lista_de_playlists.txt", "r") as arq:
+                with open(f"{nome_login}_lista_de_playlists.txt", "r") as arq:
                     playlists = [linha.strip() for linha in arq if linha.strip()]
 
                 print("\nPlaylists disponíveis:")
@@ -385,11 +386,11 @@ def playlist(nome_login):
                 except ValueError:
                     print("Entrada inválida.")
             def remover_musicas_playlist():
-                if not os.path.exists("lista_de_playlists.txt"): #verificar o caminho 
+                if not os.path.exists(f"{nome_login}_lista_de_playlists.txt"): #verificar o caminho 
                     print("Nenhuma playlist disponível para editar.")
                     return
     
-                with open("lista_de_playlists.txt", "r") as arq:
+                with open(f"{nome_login}_lista_de_playlists.txt", "r") as arq:
                     playlists = [linha.strip() for linha in arq if linha.strip()]
 
                 print("\nPlaylists disponíveis:")
@@ -447,11 +448,11 @@ def playlist(nome_login):
 
     #7.3 função para deletar playlists
     def deletar_playlist(nome_login):
-        if not os.path.exists("lista_de_playlists.txt"): #se não está no caminho(path) que existe então não existe nenhuma playlist para ser escluída
+        if not os.path.exists(f"{nome_login}_lista_de_playlists.txt"): #se não está no caminho(path) que existe então não existe nenhuma playlist para ser escluída
             print("\nNenhuma playlist para excluir.")
             return
 
-        with open("lista_de_playlists.txt", "r") as registro:
+        with open(f"{nome_login}_lista_de_playlists.txt", "r") as registro:
             todas = [linha.strip() for linha in registro if linha.strip()] #compreensão de listas pesquisadas e aprendidas na aula
 
         if not todas:
@@ -473,7 +474,7 @@ def playlist(nome_login):
 
                 # remover do índice
                 del todas[escolha - 1]
-                with open("lista_de_playlists.txt", "w") as registro:
+                with open(f"{nome_login}_lista_de_playlists.txt", "w") as registro:
                     for item in todas:
                         registro.write(item + "\n")
 
@@ -487,25 +488,25 @@ def playlist(nome_login):
     while True:
         opcao_playlist = exibir_menu_playlist()
         if opcao_playlist == 1:
-            nova_playlist()
+            nova_playlist(nome_login)
         elif opcao_playlist == 2:
-            editar_playlist()
+            editar_playlist(nome_login)
         elif opcao_playlist == 3:
-            deletar_playlist()
+            deletar_playlist(nome_login)
         elif opcao_playlist == 0:
             break
 #Função para aparecer o histórico de musicas curtidas e descurtidas
 #função simples que basicamente só pega os .txt armazenados de curtidas e descurtidas e os imprime
 def historico(nome_login):
     def lista_curtidas(nome_login):
-        with open("musicas_curtidas.txt", "r") as arquivo:
+        with open(f"{nome_login}_musicas_curtidas.txt", "r") as arquivo:
             conteudo = [linha.strip() for linha in arquivo if linha.strip()]
         print("\nLista de músicas curtidas:")
         for i, musica  in enumerate(conteudo):
             print(f"{i}. |{musica}|.")
 
     def lista_descurtidas(nome_login):
-        with open("musicas_descurtidas.txt", "r") as arquivo:
+        with open(f"{nome_login}_musicas_descurtidas.txt", "r") as arquivo:
             conteudo = [linha.strip() for linha in arquivo if linha.strip()]
         print("\nLista de músicas descurtidas:")
         for i, musica  in enumerate(conteudo):
@@ -514,9 +515,9 @@ def historico(nome_login):
     while True:
         opcao_historico = exibir_menu_historico()
         if opcao_historico == 1:
-            lista_curtidas()
+            lista_curtidas(nome_login)
         elif opcao_historico == 2:
-            lista_descurtidas()
+            lista_descurtidas(nome_login)
         elif opcao_historico == 0:
             break
 
