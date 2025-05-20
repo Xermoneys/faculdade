@@ -50,14 +50,14 @@ color: #7f8c8d;
 font-style: italic;
 }
 
-.header {
+.Titulo-container {
 display: flex;
 justify-content: space-between;
 align-items: center;
 margin-bottom: 20px;
 }
 
-.add-button {
+.nova_patente-button {
 background-color: #2ecc71;
 color: white;
 border: none;
@@ -68,7 +68,7 @@ text-decoration: none;
 font-weight: 500;
 }
 
-.add-2button {
+.lista_patente-button {
 background-color: #cc2eaa;
 color: white;
 border: none;
@@ -79,11 +79,11 @@ text-decoration: none;
 font-weight: 500;
 }
 
-.add-2button:hover{
+.lista_patente-button:hover{
     background-color: #a11583;
 }
 
-.add-button:hover {
+.nova_patente-button:hover {
 background-color: #27ae60;
 }
 

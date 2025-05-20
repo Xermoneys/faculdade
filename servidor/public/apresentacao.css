@@ -1,25 +1,19 @@
-/* Reset básico */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
   background-color: #f0f2f8;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #333;
   padding: 0;
 }
-
-/* Container principal */
 .site_todo {
   display: flex;
   flex-direction: column;
   padding: 1rem;
 }
-
-/* Título moderno */
 .Titulo-container {
   display: flex;
   justify-content: center;
@@ -30,15 +24,12 @@ body {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
 }
-
 .Titulo-container > p {
   font-size: 28px;
   font-weight: 600;
   color: #fff;
   font-family: 'Segoe UI', sans-serif;
 }
-
-/* Menu superior */
 .menu-container {
   background-color: #fff;
   padding: 12px 0;
@@ -46,35 +37,27 @@ body {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
   margin-bottom: 30px;
 }
-
 .menu {
   display: flex;
   justify-content: center;
   gap: 30px;
   list-style: none;
 }
-
 .menu > li {
   font-size: 16px;
   font-weight: 500;
 }
-
-/* Estilo de links */
 a {
   color: #8e44ad;
   text-decoration: none;
   transition: color 0.3s ease;
 }
-
 a:hover {
   color: #5e3370;
 }
-
 a:active {
   color: #c0392b;
 }
-
-/* Apresentação do texto */
 .Texto_apresentacao > p {
   font-size: 17px;
   line-height: 1.6;
@@ -86,29 +69,9 @@ a:active {
   border-radius: 10px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
-
-/* Título central */
 h1 {
   color: #2c3e50;
   text-align: center;
   font-size: 2.2rem;
   margin-bottom: 20px;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-  .menu {
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-  }
-
-  .Texto_apresentacao > p {
-    margin: 10px 15px;
-  }
-
-  .Titulo-container > p {
-    font-size: 22px;
-    text-align: center;
-  }
 }
