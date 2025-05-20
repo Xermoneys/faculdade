@@ -203,8 +203,8 @@ def login_usuario():
         return False
 
 #4.Função para procurar músicas pelo nome da música ou artista
-def buscar():
-    def buscar_musicas(): #4.1 Função buscar por música
+def buscar(nome_login):
+    def buscar_musicas(nome_login): #4.1 Função buscar por música
         print("Procurando músicas por nome da música...")
         musica_procurada = input("Digite o nome da música a ser procurada: ")
         encontrou = False #flag para que faça a verificação se achou a musica
@@ -221,7 +221,7 @@ def buscar():
             print("Música não encontrada.")
 
     #4.2.Função para procurar músicas pelo nome do artista
-    def buscar_por_artista():
+    def buscar_por_artista(nome_login):
         print("\nProcurando músicas por artista... ")
         musica_artista = input("\nDigite o nome do artista que deseja procurar: ")
         encontrou = False #linha para a música ser achada
@@ -247,7 +247,7 @@ def buscar():
             break
 #5.Função para informações de músicas buscadas
 #pegar informação da musica buscada e procurar no banco de dados musica e artista 
-def musicas_buscadas(): 
+def musicas_buscadas(nome_login): 
     with open("musicas_buscadas.txt", "r") as arq_musicas:
         musicas_buscadas = [linha.strip() for linha in arq_musicas if linha.strip()]
 
@@ -256,8 +256,8 @@ def musicas_buscadas():
         print(f"{i}. {musica}") #imprimir musicas buscadas inteiro enumerando
             
 #6.Função para curtir e descurtir músicas
-def gerenciar_musicas():
-    def curtir_musicas(): #6.1 Função para curtir as músicas
+def gerenciar_musicas(nome_login):
+    def curtir_musicas(nome_login): #6.1 Função para curtir as músicas
         with open("musicas.txt", "r") as arquivo:#ler arquivo de músicas completo para depois escolher quais músicas serão curtidas
             conteudo = arquivo.readlines()
 
@@ -281,7 +281,7 @@ def gerenciar_musicas():
             print("\nMúsica não encontrada.")
 
     #6.2 Função para descurtir músicas
-    def descurtir_musicas():
+    def descurtir_musicas(nome_login):
         with open("musicas_curtidas.txt", "r") as arquivo: #lê o arquivo de musicas curtidas primeiro para o usuario poder descurtir depois
             musicas_curtidas = arquivo.readlines()
 
@@ -325,9 +325,9 @@ def gerenciar_musicas():
             break
         
 #7.Função para gerenciar a playlist
-def playlist():
+def playlist(nome_login):
     #7.1função para criação de playlists
-    def nova_playlist(): 
+    def nova_playlist(nome_login): 
         titulo = input("Digite um nome para a nova playlist que deseja criar: ")
         nome_arquivo = f"{titulo}_playlist.txt" #ficar mais fácil para adicionar o nome dado pelo usuário e especificar que é uma playlist criada por ele
 
@@ -341,7 +341,7 @@ def playlist():
 
         print(f"\nA playlist '{nome_arquivo}' foi criada com sucesso.")
     #7.2 função para editar a playlist
-    def editar_playlist():
+    def editar_playlist(nome_login):
             def adicionar_musicas_playlist():
                 if not os.path.exists("lista_de_playlists.txt"): #verifica se existe alguma playlist para ser editada
                     print("\nNenhuma playlist disponível para ser editada.")
@@ -446,7 +446,7 @@ def playlist():
                    break    
 
     #7.3 função para deletar playlists
-    def deletar_playlist():
+    def deletar_playlist(nome_login):
         if not os.path.exists("lista_de_playlists.txt"): #se não está no caminho(path) que existe então não existe nenhuma playlist para ser escluída
             print("\nNenhuma playlist para excluir.")
             return
@@ -496,15 +496,15 @@ def playlist():
             break
 #Função para aparecer o histórico de musicas curtidas e descurtidas
 #função simples que basicamente só pega os .txt armazenados de curtidas e descurtidas e os imprime
-def historico():
-    def lista_curtidas():
+def historico(nome_login):
+    def lista_curtidas(nome_login):
         with open("musicas_curtidas.txt", "r") as arquivo:
             conteudo = [linha.strip() for linha in arquivo if linha.strip()]
         print("\nLista de músicas curtidas:")
         for i, musica  in enumerate(conteudo):
             print(f"{i}. |{musica}|.")
 
-    def lista_descurtidas():
+    def lista_descurtidas(nome_login):
         with open("musicas_descurtidas.txt", "r") as arquivo:
             conteudo = [linha.strip() for linha in arquivo if linha.strip()]
         print("\nLista de músicas descurtidas:")
