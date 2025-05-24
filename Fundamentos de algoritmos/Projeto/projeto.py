@@ -343,6 +343,7 @@ def playlist(nome_login):
         print(f"\nA playlist '{nome_arquivo}' foi criada com sucesso.")
     #7.2 função para editar a playlist
     def editar_playlist(nome_login):
+            
             def adicionar_musicas_playlist():
                 if not os.path.exists(f"{nome_login}_lista_de_playlists.txt"): #verifica se existe alguma playlist para ser editada
                     print("\nNenhuma playlist disponível para ser editada.")
@@ -385,6 +386,7 @@ def playlist(nome_login):
                     print(f"Música |{musica_escolhida}| adicionada à playlist |{nome_playlist}|.")
                 except ValueError:
                     print("Entrada inválida.")
+
             def remover_musicas_playlist():
                 if not os.path.exists(f"{nome_login}_lista_de_playlists.txt"): #verificar o caminho 
                     print("Nenhuma playlist disponível para editar.")
