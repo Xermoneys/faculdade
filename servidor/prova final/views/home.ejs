@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="home.css" rel="stylesheet">
+    <title>Home.ejs</title>
+</head>
+<body>
+    <div class="site-todo">
+        <div class="posicao">
+            <h1>Sistema de votação da FEI</h1>
+        </div>
+        <div class="posicao">
+            <img src="votar.png" width="100">
+        </div>
+        <div class="posicao">
+            <h1>O que você mais gostou de aprender:</h1>
+        </div>
+        <div class="texto">
+            <p>Tecnologia 1 - HTML e CSS</p>
+        </div>
+        <div class="texto">
+            <p>Tecnologia 2 - NodeJS</p>
+        </div>
+        <div class="texto">
+            <p>Tecnologia 3 -MongoDB</p>
+        </div>
+        <div class="posicao">
+            <h2>Vote na sua tecnologia favorita:</h2>
+        </div>
+        <div class="posicao">
+            <form method="post" action="/cadastro">
+                <label for="codigo">Código da tecnologia:</label>
+                <input type="number" name="codigo" required>
+            <div class="botao">
+                <button type="submit" class="button">Votar</button>
+            </div>
+            </form>
+        </div>
+        <div class="posicao">
+            <h2>Tecnologias mais votadas:</h2>
+        </div>
+        <div class="posicao">
+            <% usuarios.forEach(function(usuario) { %>
+                <div class="componentes">
+                    <p>HTML e CSS- <%= usuario.codigo_html %> </p>
+                    <p>NodeJS- <%= usuario.codigo_node %> </p>
+                    <p>MongoDB- <%= usuario.codigo_mongo %> </p>
+                </div>
+            <% }); %>
+        </div>
+    </div>
+</body>
+</html>

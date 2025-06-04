@@ -2,8 +2,8 @@ var http = require("http");
 
 var express = require("express");
 
-var mongodb = require("mongodb")
 
+var mongodb = require("mongodb")
 const uri = "mongodb+srv://luciano:240904lu@projeto.vgvfhxf.mongodb.net/?retryWrites=true&w=majority&appName=Projeto";
 
 const MongoClient = mongodb.MongoClient;
