@@ -21,12 +21,22 @@ app.set("view engine" , "ejs")
 app.set("views", "./views" );
 
 var server = http. createServer (app);
-server.listen(80);
+server.listen(2100);
 console.log('Servidor rodando ...');
 
 client.connect().then(() => {
     const dbo = client.db("exemplo_bd"); //conecta no banco de dados
     const usuarios = dbo.collection("usuarios");
+
+app.get('/', (req, resp) => {
+    usuarios.find().toArray((err, resultado) => {
+        if (err) {
+            resp.status(500).send("Erro ao buscar usuários.");
+        } else {
+            resp.render('home', { usuarios: resultado });
+        }
+    });
+});
 
 app.post('/cadastro', function (requisicao, resposta) {
     const data = {
@@ -40,7 +50,7 @@ app.post('/cadastro', function (requisicao, resposta) {
         if (err) {
             resposta.status(400).json({ success: false, message: "Erro ao cadastrar usuário!" });
         } else {
-            resposta.redirect('/lista');
+            resposta.render('resposta_cadastro');
         }
     });
 });
@@ -50,7 +60,7 @@ app.get('/lista', function (requisicao, resposta) {
         if (err) {
             resposta.status(500).send("Erro ao buscar usuários.");
         } else {
-            resposta.render('home_lista', { usuarios: resultado });
+            resposta.render('home', { usuarios: resultado });
         }
     });
 });
