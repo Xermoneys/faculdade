@@ -66,9 +66,9 @@ app.get('/media', function (req, res) {
             const nota2 = parseFloat(usuario.nota2);
             const nota3 = parseFloat(usuario.nota3);
 
-            const media = ((nota1 + nota2 + nota3) / 3).toFixed(2);
+            const media = ((nota1 + nota2 + nota3) / 3);
 
-            res.render('resposta_media_sucesso', { nome: nomeAluno, media: media }); // ✅ Usando EJS
+            res.render('resposta_media_sucesso', { nome: nomeAluno, media: media }); 
         }
     });
 });

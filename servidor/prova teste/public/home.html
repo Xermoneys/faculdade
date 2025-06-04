@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="home.css" rel="stylesheet">
+    <title>Lembretes</title>
+</head>
+<body>
+    <div class="site-todo">
+        <div class="titulo">
+            <div class="posicao">
+                <h1>Cadastre um novo lembrete</h1>
+            </div>
+            <div class="posicao">
+                <img src="sino.png" width="100">
+            </div>
+            <div class="lembrar">
+                <h1>O que você gostaria de lembrar?</h1>
+            </div>
+            <div class="tarefas">
+                Tarefas
+            </div>
+            <div class="tarefas">
+                Reuniôes
+            </div>
+            <div class="tarefas">
+                Compromissos
+            </div>
+        </div>
+        <form method = "post" action = "/cadastro_lembrete" class="form-container">
+            <div class="forms">
+                <label for = "titulo">Título:</label>
+                <input type="text" name="titulo" required>
+            </div>
+            <div class="forms">
+                <label for="descricao">Descrição:</label>
+                <input type="text" name="descricao" required>
+            </div>
+            <div class="forms">
+                <label for="local">Local:</label>
+                <input type="text" name="local" required>
+            </div>
+            <div class="forms">
+                <label for="data">Data:</label>
+                <input type="date" name="data" required>
+            </div>
+            <div class="forms">
+                <label for="hora">Hora:</label>
+                <input type="time" name="hora" required>
+            </div>
+            <div class="botao">
+                <button type="submit" class="button">Salvar</button>
+            </div>
+        </form>
+
+        <form method="get" action="/listagem">
+            <div class="forms">
+                <button type="submit" class="button">Listar</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
