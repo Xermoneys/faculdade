@@ -19,7 +19,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static('./public'));
 
 const server = http.createServer(app);
-server.listen(3000, () => {
+server.listen(2200, () => {
     console.log("servidor rodando...");
 });
 //Conectando ao mongodb
