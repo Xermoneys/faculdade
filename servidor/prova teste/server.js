@@ -28,6 +28,10 @@ client.connect().then(() => {
     const dbo = client.db("exemplo_bd"); //conecta no banco de dados
     const usuarios = dbo.collection("lembretes");
 
+app.get('/', (req, res) => {
+res.render('home');
+});
+
 app.post('/cadastro_lembrete', function (req, resp) {
     const data = {
         titulo: req.body.titulo,
@@ -40,7 +44,7 @@ app.post('/cadastro_lembrete', function (req, resp) {
         if (err) {
             resp.status(400).json({ success: false, message: "Erro ao cadastrar usuário!" });
         } else {
-            resp.redirect('/listagem');
+            resp.render('cadastrado_com_sucesso');
         }
     });
 });
