@@ -28,39 +28,70 @@ client.connect().then(() => {
     const dbo = client.db("exemplo_bd"); //conecta no banco de dados
     const usuarios = dbo.collection("votos");
 
-app.get('/', (req, resp) => {
-    usuarios.find().toArray((err, resultado) => {
-        if (err) {
-            resp.status(500).send(" ");
-        } else {
-            resp.render('home', { usuarios: resultado });
-        }
-    });
+app.get('/', async (req, resp) => {
+    try {
+        const votos = await usuarios.find().toArray();
+
+        let html = 0, node = 0, mongo = 0;
+
+        votos.forEach(voto => {
+            if (voto.codigo == "1") html++;
+            else if (voto.codigo == "2") node++;
+            else if (voto.codigo == "3") mongo++;
+        });
+
+        resp.render('home', {
+            usuarios: votos,
+            codigo_html: html,
+            codigo_node: node,
+            codigo_mongo: mongo
+        });
+    } catch (err) {
+        resp.status(500).send("Erro ao carregar votos.");
+    }
 });
 
+
 app.post('/cadastro', function (req, resp) {
-    const data = {
-        codigo: req.body.codigo
-    };
+    const codigo = req.body.codigo;
+
+    if (!["1", "2", "3"].includes(codigo)) {
+        return resp.status(400).json({ success: false, message: "Código inválido!" });
+    }
+
+    const data = { codigo };
     usuarios.insertOne(data, (err) => {
         if (err) {
             resp.status(400).json({ success: false, message: "Erro ao submeter o voto!" });
         } else {
-            resp.render('registro');
+            resp.render('registro'); // ou redirecionar para /listagem
         }
     });
 });
 
-app.get('/listagem', function (requisicao, resposta) {
-    usuarios.find().toArray((err, usuario) => {
-        if (err) {
-            resposta.status(500).send("Erro ao buscar votos.");
-        } else {
-            const html = (usuario.codigo == "1");
-            const node = (usuario.codigo == "2");
-            const mongo = (usuario.codigo == "3");
-            resposta.render('home', { codigo_html: html, codigo_node: node, codigo_mongo: mongo });
-        }
-    });
+
+app.get('/listagem', async function (requisicao, resposta) {
+    try {
+        const votos = await usuarios.find().toArray();
+
+        // Contar votos por tecnologia
+        let html = 0, node = 0, mongo = 0;
+
+        votos.forEach(voto => {
+            if (voto.codigo == "1") html++;
+            else if (voto.codigo == "2") node++;
+            else if (voto.codigo == "3") mongo++;
+        });
+
+        resposta.render('home', {
+            codigo_html: html,
+            codigo_node: node,
+            codigo_mongo: mongo,
+            usuarios: votos // manter isso para o loop do EJS se necessário
+        });
+    } catch (err) {
+        resposta.status(500).send("Erro ao buscar votos.");
+    }
 });
+
 });

@@ -42,13 +42,11 @@
             <h2>Tecnologias mais votadas:</h2>
         </div>
         <div class="posicao">
-            <% usuarios.forEach(function(usuario) { %>
-                <div class="componentes">
-                    <p>HTML e CSS- <%= usuario.codigo_html %> </p>
-                    <p>NodeJS- <%= usuario.codigo_node %> </p>
-                    <p>MongoDB- <%= usuario.codigo_mongo %> </p>
-                </div>
-            <% }); %>
+            <div class="componentes">
+                <p>HTML e CSS- <%= codigo_html %> Votos </p>
+                <p>NodeJS- <%= codigo_node %> Votos</p>
+                <p>MongoDB- <%= codigo_mongo %> Votos</p>
+            </div>
         </div>
     </div>
 </body>
