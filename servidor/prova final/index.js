@@ -69,29 +69,4 @@ app.post('/cadastro', function (req, resp) {
     });
 });
 
-
-app.get('/listagem', async function (requisicao, resposta) {
-    try {
-        const votos = await usuarios.find().toArray();
-
-        // Contar votos por tecnologia
-        let html = 0, node = 0, mongo = 0;
-
-        votos.forEach(voto => {
-            if (voto.codigo == "1") html++;
-            else if (voto.codigo == "2") node++;
-            else if (voto.codigo == "3") mongo++;
-        });
-
-        resposta.render('home', {
-            codigo_html: html,
-            codigo_node: node,
-            codigo_mongo: mongo,
-            usuarios: votos // manter isso para o loop do EJS se necessário
-        });
-    } catch (err) {
-        resposta.status(500).send("Erro ao buscar votos.");
-    }
-});
-
 });
