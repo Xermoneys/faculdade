@@ -1,7 +1,6 @@
 //Primeiro exercício da 1 aula
 
 #include <stdio.h>
-
 int main() {
   int numero, soma = 0;
 
@@ -12,3 +11,4 @@ int main() {
  }
  printf("A soma dos 5 numeros é: %d\n", soma);
  return 0;
+}
