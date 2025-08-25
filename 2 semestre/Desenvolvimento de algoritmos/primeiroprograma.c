@@ -12,4 +12,3 @@ int main() {
  }
  printf("A soma dos 5 numeros é: %d\n", soma);
  return 0;
-}
