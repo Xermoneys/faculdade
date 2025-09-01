@@ -15,6 +15,7 @@ int main (){
     printf("Digite a nota da prova: \n");
     scanf("%f", &nota_prova);
     nota_total = (soma_lab/3)*0.2 + sqrt(nota_projeto * nota_prova)*0.8;
-    printf("A nota final e %.2f", nota_total);
+    printf("A nota final e %.2f\n", nota_total);
+    system("pause");
     return 0;
 }

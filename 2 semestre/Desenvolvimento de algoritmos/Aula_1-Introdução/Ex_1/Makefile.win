@@ -1,0 +1,30 @@
+# Project: Aula_1
+# Makefile created by Dev-C++ 5.0.0.4
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+RES      = 
+OBJ      = Aula_1.o $(RES)
+LINKOBJ  = Aula_1.o $(RES)
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/lib" -L"C:/Program Files (x86)/Dev-Cpp/lib/gcc" -static-libstdc++ -static-libgcc  
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/include" 
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/include" 
+BIN      = Aula_1.exe
+CXXFLAGS = $(CXXINCS)   -std=c99
+CFLAGS   = $(INCS)   -std=c99
+RM       = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before Aula_1.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o "Aula_1.exe" $(LIBS)
+
+Aula_1.o: Aula_1.c
+	$(CC) -c Aula_1.c -o Aula_1.o $(CFLAGS)

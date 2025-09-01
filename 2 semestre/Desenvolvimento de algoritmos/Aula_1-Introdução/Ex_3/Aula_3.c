@@ -12,6 +12,8 @@ int main(){
         printf("O produto esta vencido.");
     }
     else{
-        printf("O produto ainda nao venceu.");
+        printf("O produto ainda nao venceu.\n");
     }
+    system("pause");
+    return 0;
 }
