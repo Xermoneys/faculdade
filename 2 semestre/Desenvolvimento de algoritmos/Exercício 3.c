@@ -5,7 +5,7 @@ int main(){
 
     printf("Digite o ano atual: \n");
     scanf("%d",&ano_atual);
-    printf("Digite o vencimento do produto: \n");
+    printf("Digite o ano de vencimento do produto: \n");
     scanf("%d",&ano_vencimento);
 
     if (ano_atual > ano_vencimento){
