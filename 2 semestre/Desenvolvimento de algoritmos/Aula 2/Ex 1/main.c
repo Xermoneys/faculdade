@@ -2,8 +2,11 @@
 #include "biblioteca.h"
 
 int main(){
-	float a = 10.0 , b = 3.0;
-	
+	float a , b = 0;
+	printf("Digite o primeiro numero: ");
+	scanf("%f",&a);
+	printf("Digite o segundo numero: ");
+	scanf("%f", &b);
 	printf("a = %.2f, b = %.2f\n", a ,b);
 	printf("Soma: %.2f\n", somar(a,b));
 	printf("Subtrair: %.2f\n", subtrair(a,b));

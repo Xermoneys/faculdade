@@ -3,7 +3,7 @@ FileName=Aula_2.dev
 Name=Aula_2
 UnitCount=3
 Type=1
-Ver=2
+Ver=1
 ObjFiles=
 Includes=
 Libs=
@@ -28,8 +28,6 @@ IncludeVersionInfo=0
 SupportXPThemes=0
 CompilerSet=0
 CompilerSettings=00000000000000000000000
-LogOutput=
-LogOutputEnabled=0
 
 [Unit1]
 FileName=biblioteca.h
