@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+
+int main(){
+	float nota1, nota2, nota3 = 0;
+	float media = 0;
+	printf("Digite a primeira nota: ");
+	scanf("%f", &nota1);
+	printf("Digite a segunda nota: ");
+	scanf("%d", &nota2);
+	printf("Digite a terceira nota: ");
+	scanf("%d", &nota3);
+	media = (nota1 + nota2 + nota3)/3;
+	if (media >= 7){
+		printf("O aluno foi aprovado!");
+}	else if (media >= 5 && media < 7){
+		printf("O aluno ficou de recuperação.")
+}   else{
+		printf("O aluno foi reprovado");
+}
+	system("pause");
+}

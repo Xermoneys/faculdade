@@ -2,8 +2,8 @@
 #include "numeros.h"
 
 int main() {
-    int num1 = 1;
-    int num2 = 2;
+    int num1 = 5;
+    int num2 = 4;
 
     printf("par: %d\n", par(num1));
     printf("par: %d\n", par(num2));
