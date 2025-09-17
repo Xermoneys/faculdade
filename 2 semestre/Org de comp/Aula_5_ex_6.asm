@@ -1,0 +1,6 @@
+MOV R0, #50
+MOV R1, #20h
+ROT:
+MOV @R1, #0EEh
+INC R1
+DJNZ R0, ROT

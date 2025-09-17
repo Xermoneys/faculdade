@@ -1,0 +1,10 @@
+ZERAR: CLR A
+MOV R0, #127
+ROT:MOV @RO, A
+DJNZ R0, ROT
+RET
+
+
+
+
+
