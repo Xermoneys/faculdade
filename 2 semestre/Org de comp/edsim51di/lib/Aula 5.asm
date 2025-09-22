@@ -1,0 +1,16 @@
+ORG 0000H
+SJMP 0050H
+ORG 0050H
+NOP
+NOP
+CLR A 
+JNC ALI
+MOV A,#0FFH
+
+ALI:
+SJMP $
+
+;Sempre piora o tempo
+CALL 
+ATENDE: 
+RET 
