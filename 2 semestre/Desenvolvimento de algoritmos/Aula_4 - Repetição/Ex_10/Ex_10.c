@@ -24,6 +24,5 @@ int main() {
     int passos = collatz(num);
     printf("Foram necessários %d passos para chegar em 1.\n", passos);
 
-    return 0;
 	system("pause");
 }
