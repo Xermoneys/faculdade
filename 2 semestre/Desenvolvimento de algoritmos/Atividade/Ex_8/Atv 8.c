@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main (){
-	int x = 12;
+	int x = 19;
 	int idade = (x >= 18)?1:0;
 	    if (idade == 1){
 			printf("Maior de idade\n");

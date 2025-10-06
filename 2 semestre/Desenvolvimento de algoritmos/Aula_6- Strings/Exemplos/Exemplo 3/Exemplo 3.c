@@ -2,7 +2,7 @@
 #include <ctype.h>  // para isdigit()
 
 int main() {
-    char str[] = "abc12def34gh5";
+    char str[] = "1a0bc12def34gh5";
     int numeros[10]; // vetor para armazenar os números encontrados
     int count = 0;
     int i = 0;
@@ -24,6 +24,6 @@ int main() {
     for (int j = 0; j < count; j++) {
         printf("%d\n", numeros[j]);
     }
-
+    printf("Quantidade de numeros encontrados: %d.", count);
     system("pause");
 }

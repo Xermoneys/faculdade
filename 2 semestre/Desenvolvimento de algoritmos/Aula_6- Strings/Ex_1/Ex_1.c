@@ -1,10 +1,20 @@
 #include <stdio.h>
 #include <string.h>
+
+int conta_caracteres(char *str , char c){
+	int count = 0;
+	while (*str != '\0'){
+		if (*str == c){
+			count++;
+			}
+			str++;
+		}
+  return count;
+}
 int main(){
- int dia, mes, ano;
- char str[11] = "01/10/2022";
- printf("%s\n", str);
- sscanf(str, "%02d/%02d/%04d", &dia, &mes, &ano);
- printf("%d %d %d\n", dia, mes, ano);
- system("pause");
+
+	char texto[] = "programacao em c";
+	int count = conta_caracteres(texto, 'c');
+ 	printf("A quantidade de caracteres sera: %d", count);
+	system("pause");
 }
