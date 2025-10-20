@@ -17,6 +17,20 @@ int main() {
             scanf("%d", &matriz2[i][j]);
         }
     }
+    printf("Matriz feita: \n");
+    for (int i = 0; i<2;i++){
+		for (int j = 0; j<2;j++){
+			printf("%2d", matriz1[i][j]);
+		}
+		printf("\n");
+    }
+    printf("Matriz feita: \n");
+    for (int i = 0; i<2;i++){
+		for (int j = 0; j<2;j++){
+			printf("%2d", matriz2[i][j]);
+		}
+		printf("\n");
+    }
     for (int i = 0; i < 2; i++) {
         for (int j = 0; j < 2; j++) {
             if (matriz1[i][j] != matriz2[i][j]) {

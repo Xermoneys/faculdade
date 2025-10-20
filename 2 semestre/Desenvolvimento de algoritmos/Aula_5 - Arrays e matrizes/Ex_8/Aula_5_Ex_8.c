@@ -11,14 +11,18 @@ int main() {
             scanf("%d", &matriz[i][j]);
         }
     }
-
+    printf("Matriz feita: \n");
+    for (int i = 0; i<3;i++){
+		for (int j = 0; j<3;j++){
+			printf("%2d", matriz[i][j]);
+		}
+		printf("\n");
+    }
     printf("\nElementos da diagonal principal:\n");
     for (int i = 0; i < 3; i++) {
         printf("%d ", matriz[i][i]);
         soma += matriz[i][i];
     }
-
     printf("\nSoma da diagonal principal = %d\n", soma);
-
     system("pause");
 }

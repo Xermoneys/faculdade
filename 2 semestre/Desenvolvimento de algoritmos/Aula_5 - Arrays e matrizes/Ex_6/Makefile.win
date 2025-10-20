@@ -1,15 +1,14 @@
 # Project: Aula_5_Ex_6
-# Makefile created by Dev-C++ 5.0.0.4
+# Makefile created by Dev-C++ 5.0.0.9
 
 CPP      = g++.exe
 CC       = gcc.exe
 WINDRES  = windres.exe
-RES      = 
 OBJ      = Ex_6.o $(RES)
 LINKOBJ  = Ex_6.o $(RES)
-LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/lib" -L"C:/Program Files (x86)/Dev-Cpp/lib/gcc" -static-libstdc++ -static-libgcc  
-INCS     = -I"C:/Program Files (x86)/Dev-Cpp/include" 
-CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/include" 
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW32/lib" -static-libstdc++ -static-libgcc  
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/include" 
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/include" 
 BIN      = Aula_5_Ex_6.exe
 CXXFLAGS = $(CXXINCS)   -std=c99
 CFLAGS   = $(INCS)   -std=c99

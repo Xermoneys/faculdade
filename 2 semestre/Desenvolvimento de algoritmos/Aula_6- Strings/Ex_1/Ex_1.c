@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <string.h>
 
-int conta_caracteres(char *str , char c){
+int conta_caracteres(char *str , char a){
 	int count = 0;
 	while (*str != '\0'){
-		if (*str == c){
+		if (*str == a){
 			count++;
 			}
 			str++;
@@ -14,7 +14,7 @@ int conta_caracteres(char *str , char c){
 int main(){
 
 	char texto[] = "programacao em c";
-	int count = conta_caracteres(texto, 'c');
- 	printf("A quantidade de caracteres sera: %d", count);
+	int count = conta_caracteres(texto, 'a');
+ 	printf("A quantidade de caracteres sera: %d\n", count);
 	system("pause");
 }

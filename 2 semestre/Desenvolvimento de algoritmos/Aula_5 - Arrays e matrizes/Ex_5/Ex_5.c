@@ -5,7 +5,7 @@ int main() {
     int i, busca, encontrado = 0;
     
     printf("Digite 10 numeros inteiros \n");
-    for (i = 0; i < 10; i++) {
+    for (i = 1; i < 11; i++) {
         printf("Numero %d: ", i);
         scanf("%d", &array[i]);
     }
