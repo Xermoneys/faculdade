@@ -1,0 +1,31 @@
+;Solução 1
+MOV R7, #0
+MOV R6, #0
+MOV R5, #0
+MOV R4, #0
+MOV R3, #0
+MOV R2, #0
+MOV R1, #0
+MOV R0, #0
+
+; Solução 2
+CLR A
+MOV R7,A
+MOV R6, A
+MOV R5,A
+MOV R4,A
+MOV R3, A
+MOV R2, A
+MOV R1,A
+MOV R0,A
+
+;Solução 3
+CLR A
+MOV R0, #8
+LB:
+MOV @R0, A
+DJNZ R0, LB
+
+
+
+

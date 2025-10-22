@@ -33,7 +33,7 @@ int main()
 
     do {
         printf("1 - Converter DECIMAL para BINARIO\n");
-        printf("2 - Sair\n");dv
+        printf("2 - Sair\n");
         printf("Escolha uma opcao: ");
         scanf("%d", &opcao);
 

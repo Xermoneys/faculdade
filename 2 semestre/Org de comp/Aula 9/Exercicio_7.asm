@@ -1,0 +1,28 @@
+ORG 0000H
+LJMP Inicio
+ORG 0050H
+
+Inicio:
+MOV 20H, #10 
+MOV 21H, #32
+MOV 22H, #04
+MOV 23H, #01
+MOV 24H, #76
+MOV 25H, #20
+
+MOV P1, #0FFH
+MOV 26H,#04
+MOV R0,#20H
+MOV R1, #6
+ACALL BUSCA
+SJMP $
+Busca:
+Array:
+MOV A,@R0
+CJNE A,26H,Diferente
+CPL A
+MOV P1,A
+Diferente:
+INC R0
+DJNZ R1,Array
+RET
