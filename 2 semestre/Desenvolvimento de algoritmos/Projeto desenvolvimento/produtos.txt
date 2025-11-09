@@ -1,0 +1,4 @@
+1;Notebook Dell;4500.00
+2;Teclado Mecânico;250.00
+3;Mouse Gamer;150.00
+4;SSD 1TB;500.00
