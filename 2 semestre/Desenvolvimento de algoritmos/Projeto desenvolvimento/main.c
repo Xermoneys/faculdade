@@ -42,7 +42,7 @@ int main() {
                 if (usuarioId != -1)
                     avaliarPedido(usuarioId);
                 else
-                    printf("Você precisa estar logado!\n");
+                    printf("Voce precisa estar logado!\n");
                 break;
             case 0:
                 printf("Encerrando o sistema...\n");
