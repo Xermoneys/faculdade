@@ -36,7 +36,7 @@ int main() {
                 if (usuarioId != -1)
                     menuPedidos(usuarioId);
                 else
-                    printf("Você precisa estar logado!\n");
+                    printf("Voce precisa estar logado!\n");
                 break;
             case 6:
                 if (usuarioId != -1)

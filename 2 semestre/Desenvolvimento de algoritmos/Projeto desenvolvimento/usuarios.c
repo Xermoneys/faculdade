@@ -12,6 +12,9 @@ typedef struct {
 } Usuario;
 
 void cadastrarUsuario() {
+	/* A função cadastrarUsuario é responsável por permitir que novos usuários sejam registrados.
+	Durante sua execução, o programa solicita que o usuário informe um nome de login e uma senha. Esses dados são então armazenados de forma persistente no arquivo usuarios.txt, garantindo que as informações permaneçam disponíveis mesmo após o encerramento do programa.
+	O objetivo dessa função é criar perfis individuais de acesso, assegurando que apenas usuários cadastrados possam realizar pedidos e acessar funcionalidades internas do sistema. */
     Usuario u;
     FILE *f = fopen(ARQ_USUARIOS, "a");
     if (!f) {
@@ -32,6 +35,11 @@ void cadastrarUsuario() {
 }
 
 int loginUsuario() {
+	/*A função loginUsuario() é responsável pelo processo de autenticação de usuários.
+Ela lê os dados do arquivo usuarios.txt e compara as credenciais fornecidas pelo usuário (nome e senha) com os registros armazenados.
+	Caso haja correspondência, o acesso é liberado e o usuário pode navegar pelo menu principal do sistema.
+Essa função é essencial para garantir a segurança e o controle de acesso, permitindo que cada cliente tenha um ambiente próprio dentro da aplicação.
+*/
     Usuario u;
     char nome[50], senha[20];
     FILE *f = fopen(ARQ_USUARIOS, "r");

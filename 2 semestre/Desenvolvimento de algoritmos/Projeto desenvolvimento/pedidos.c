@@ -4,7 +4,12 @@
 #include "pedidos.h"
 
 #define ARQ_PEDIDOS "pedidos.txt"
-
+/*O módulo Gerenciar Pedidos abrange as funções de criar, editar, excluir, adicionar e remover produtos de um pedido. 
+Essas operações permitem ao usuário personalizar suas compras conforme sua necessidade.
+Cada pedido criado é associado ao ID do usuário que o realizou, garantindo um histórico individual.
+As informações são armazenadas no arquivo pedidos.txt, de modo que todas as alterações são salvas permanentemente.
+Esse módulo representa o núcleo do sistema, simulando de forma simplificada o processo de compra em uma loja online.
+*/
 typedef struct {
     int id;
     int usuarioId;
@@ -14,6 +19,7 @@ typedef struct {
 } Pedido;
 
 void criarPedido(int usuarioId) {
+	/*cria um novo pedido associado a um usuário logado.*/
     Pedido p;
     FILE *f = fopen(ARQ_PEDIDOS, "a");
 
@@ -38,6 +44,7 @@ void criarPedido(int usuarioId) {
 }
 
 void editarPedido(int usuarioId) {
+	/*permite alterar os dados de um pedido existente.*/
     Pedido p;
     int id;
     FILE *f = fopen(ARQ_PEDIDOS, "r");
@@ -70,6 +77,7 @@ void editarPedido(int usuarioId) {
 }
 
 void excluirPedido(int usuarioId) {
+	/*remove um pedido do sistema.*/
     Pedido p;
     int id;
     FILE *f = fopen(ARQ_PEDIDOS, "r");
@@ -98,6 +106,7 @@ void excluirPedido(int usuarioId) {
 }
 
 void adicionarProdutoPedido(int usuarioId) {
+	/*adicionar um produto a um pedido já existente*/
     Pedido p;
     int id;
     char novoProduto[50];
@@ -131,6 +140,7 @@ void adicionarProdutoPedido(int usuarioId) {
 }
 
 void removerProdutoPedido(int usuarioId) {
+	/*remover um produto a um pedido já existente*/
     Pedido p;
     int id;
     char produtoRemover[50];
@@ -167,6 +177,7 @@ void removerProdutoPedido(int usuarioId) {
 }
 
 void listarPedidos(int usuarioId) {
+	/*listar os pedidos  que o usuário já fez.*/
     Pedido p;
     FILE *f = fopen(ARQ_PEDIDOS, "r");
     if (!f) {
@@ -187,6 +198,11 @@ void listarPedidos(int usuarioId) {
 }
 
 void avaliarPedido(int usuarioId) {
+	/*A função Avaliar Pedido possibilita ao usuário atribuir uma nota de 0 a 5 estrelas a um pedido já finalizado.
+	Essa avaliação é registrada no arquivo pedidos.txt, associada ao respectivo pedido e ao usuário que a realizou.
+	O objetivo é simular o sistema de feedback encontrado em plataformas de e-commerce, permitindo que o cliente expresse sua satisfação com a compra.
+	Além de complementar o realismo da aplicação, essa função demonstra a integração entre diferentes módulos do programa.
+*/
     Pedido p;
     int id, avaliacao;
     FILE *f = fopen(ARQ_PEDIDOS, "r");
