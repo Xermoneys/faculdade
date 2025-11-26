@@ -191,7 +191,7 @@ void listarPedidos(int usuarioId) {
         if (p.usuarioId == usuarioId) {
             printf("ID: %d | Produtos: %s | Total: R$ %.2f | Avaliacao: %s\n",
                    p.id, p.produtos, p.total,
-                   (p.avaliacao >= 0) ? (p.avaliacao == 0 ? "0 estrelas" : (p.avaliacao == 1 ? "1 estrela" : "varias estrelas")) : "Sem avaliação");
+                   (p.avaliacao >= 0) ? (p.avaliacao == 0 ? "0 estrelas" : (p.avaliacao == 1 ? "1 estrela" : "varias estrelas")) : "Sem avaliacao");
         }
     }
     fclose(f);

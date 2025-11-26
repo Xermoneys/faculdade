@@ -1,1 +1,1 @@
-2;1;notebook, ;120.00;5
+1;1;notebook, placa de video, ;120.00;3
