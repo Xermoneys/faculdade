@@ -2,11 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.ex1;
+package br.edu.mavenproject1.Ex1;
 
 /**
  *
- * @author lucia
+ * @author feisplmonegatto
  */
 public class Pessoa {
     private String cpf;
@@ -32,3 +32,4 @@ public class Pessoa {
         return idade;
     } 
 }
+
