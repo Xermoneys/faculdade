@@ -24,10 +24,10 @@ public class Retângulo {
     public int getLado2(){
         return lado2;
     }
-    public int getarea(){
+    public int area(){
         return lado1 * lado2;
     }
-    public int getperimetro(){
-        return lado1 + lado1 + lado2 + lado2;
+    public int perimetro(){
+        return 2 * (lado1+lado2);
     }
 }
