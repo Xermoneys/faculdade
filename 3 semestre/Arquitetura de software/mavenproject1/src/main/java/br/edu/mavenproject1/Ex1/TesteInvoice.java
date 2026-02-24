@@ -1,4 +1,4 @@
-/*
+"/*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
@@ -26,6 +26,8 @@ public class TesteInvoice {
         System.out.println("Dados do produto 1");
         System.out.println("Identificador: "+prod1.getIdentificador()+ " |Descricao: " +prod1.getDescricao()+" |Preco: " +prod1.getPreco()+ " |Quantidade: " +prod1.getQuantidade());
         System.out.println("Invoice Amount: " +prod1.getInvoiceAmount());
+        
+        System.out.println("Dados do produto 2");
         System.out.println("Identificador: "+prod2.getIdentificador()+ " |Descricao: " +prod2.getDescricao()+" |Preco: " +prod2.getPreco()+ " |Quantidade: " +prod2.getQuantidade());
         System.out.println("Invoice Amount: " +prod2.getInvoiceAmount());
         

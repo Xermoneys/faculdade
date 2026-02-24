@@ -11,6 +11,7 @@ package br.edu.mavenproject1.Ex1;
 public class Retângulo {
     private int lado1;
     private int lado2;
+    private float preco;
     
     public void setLado1(int lado1){
         this.lado1 = lado1;
@@ -18,16 +19,25 @@ public class Retângulo {
     public void setLado2(int lado2){
         this.lado2 = lado2;
     }
+    public void setPreco(float preco){
+        this.preco = preco;
+    }
     public int getLado1(){
         return lado1;
     }
     public int getLado2(){
         return lado2;
     }
+    public float getPreco(){
+        return preco;
+    }
     public int area(){
-        return lado1 * lado2;
+        return this.lado1 * this.lado2;
     }
     public int perimetro(){
-        return 2 * (lado1+lado2);
+        return (this.getLado1()*2)+(this.getLado2()*2);
+    }
+    public float precoTotal(){
+        return this.area() * this.preco;
     }
 }
