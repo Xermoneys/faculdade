@@ -9,7 +9,7 @@ import java.util.Scanner;
  * @author feisplmonegatto
  */
 public class TestePerfil {
-    public static void main(String[] args){
+    public static void exercicio7(){
         Scanner sc = new Scanner(System.in);
         PerfilSaude p1 = new PerfilSaude();
         
@@ -20,10 +20,10 @@ public class TestePerfil {
         p1.setSobrenome(sc.nextLine());
         System.out.println("Digite o seu sexo: ");
         p1.setSexo(sc.nextLine());
-        System.out.println("Digite o seu mes de nascimento: ");
-        p1.setMes(sc.nextInt());
         System.out.println("Digite o seu dia de nascimento: ");
         p1.setDia(sc.nextInt());
+        System.out.println("Digite o seu mes de nascimento: ");
+        p1.setMes(sc.nextInt());
         System.out.println("Digite o seu ano de nascimento: ");
         p1.setAno(sc.nextInt());
         System.out.println("Digite a sua altura: ");
@@ -33,12 +33,10 @@ public class TestePerfil {
         System.out.println("Nome do paciente: " + p1.getNome());
         System.out.println("Sobrenome do paciente: " + p1.getSobrenome());
         System.out.println("Sexo do paciente: " + p1.getSexo());
-        System.out.println("Mes de nascimento: " + p1.getMes());
-        System.out.println("Dia de nascimento: " + p1.getDia());
-        System.out.println("Ano de nasciemnto: " + p1.getAno());
+        System.out.println("Data de nascimento: " + p1.getDia()+ "/" + p1.getMes()+ "/"+ p1.getAno());
         System.out.println("Altura do paciente: " + p1.getAltura());
         System.out.println("Peso do paciente: " + p1.getPeso());
         System.out.println("Sua idade: " + p1.calcularIdade());
-        System.out.println("IMC: " + p1.calcularImc());
+        System.out.printf("IMC: %.2f" , p1.calcularImc());
     }
 }

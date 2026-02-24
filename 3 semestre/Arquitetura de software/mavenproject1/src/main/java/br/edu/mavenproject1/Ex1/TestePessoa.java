@@ -7,7 +7,7 @@ import br.edu.mavenproject1.Ex1.Pessoa;
 import java.util.Scanner;
 public class TestePessoa {
 
-    public static void main(String[] args) {
+    public static void exercicio1() {
         Scanner sc = new Scanner(System.in);
         Pessoa p1 = new Pessoa();
         Pessoa p2 = new Pessoa();

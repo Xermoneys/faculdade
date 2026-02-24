@@ -9,7 +9,7 @@ import java.util.Scanner;
  * @author lucia
  */
 public class Retangulo {
-    public static void main(String[] args){
+    public static void exercicio3(){
     Scanner sc = new Scanner(System.in);
     Retângulo ret1  = new Retângulo();
     Retângulo ret2  = new Retângulo();

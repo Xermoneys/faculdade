@@ -40,14 +40,14 @@ public class PerfilSaude {
        }
     }
     public void setDia(int dia){
-        if(dia >= 1 || dia <= 30){
+        if(dia >= 1 && dia <= 30){
             this.dia = dia;
         }else{
             this.dia = 1;
         }
     }
     public void setAno(int ano){
-        if(dia >= 1900 || dia <= 2026){
+        if(ano >= 1900 && ano <= 2026){
             this.ano = ano;
         }else{
             this.ano = 1900;
@@ -86,7 +86,7 @@ public class PerfilSaude {
     public int calcularIdade(){
         return (2026 - this.ano); 
     }
-    public double calcularImc(){
-        return (peso / altura * altura);
+    public float calcularImc(){
+        return this.peso / (this.altura * this.altura);
     }
 }

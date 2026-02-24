@@ -9,7 +9,7 @@ package br.edu.mavenproject1.Ex1;
  * @author feisplmonegatto
  */
 public class TesteFuncionario {
-    public static void main(String[] args){
+    public static void exercicio5(){
         Funcionario f1 = new Funcionario();
         Funcionario f2 = new Funcionario();
         

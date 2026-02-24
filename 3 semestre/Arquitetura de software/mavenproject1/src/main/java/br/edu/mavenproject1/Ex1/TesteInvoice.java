@@ -1,7 +1,4 @@
-"/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package br.edu.mavenproject1.Ex1;
 
 /**
@@ -9,7 +6,7 @@ package br.edu.mavenproject1.Ex1;
  * @author lucia
  */
 public class TesteInvoice {
-    public static void main (String[] args){
+    public static void exercicio6(){
         Invoice prod1 = new Invoice();
         Invoice prod2 = new Invoice();
         
