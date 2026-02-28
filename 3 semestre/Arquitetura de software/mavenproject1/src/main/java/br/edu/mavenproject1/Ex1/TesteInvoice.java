@@ -1,5 +1,5 @@
 
-git stpackage br.edu.mavenproject1.Ex1;
+package br.edu.mavenproject1.Ex1;
 
 /**
  *
