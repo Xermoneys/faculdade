@@ -12,6 +12,6 @@ public class TesteFuncionarioAprimorado {
     public static void exercicio8(){
         FuncionarioAprimorado fa = new FuncionarioAprimorado("Lu", "Ventura",1000);
         
-        System.out.println("fa1"+ "" +fa.nome + " " +fa.sobrenome+ " "+fa.salarioMensal);
+        System.out.println("Funcionario: "+ "" +fa.nome + " " +fa.sobrenome+ " "+fa.salarioMensal);
     }
 }
