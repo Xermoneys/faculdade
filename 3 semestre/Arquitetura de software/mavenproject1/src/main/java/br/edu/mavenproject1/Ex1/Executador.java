@@ -15,6 +15,8 @@ public class Executador {
         //TesteFuncionario.exercicio5();
         //TesteInvoice.exercicio6(); 
         //TestePerfil.exercicio7();
-        TesteFuncionarioAprimorado.exercicio8();
+        //TesteFuncionarioAprimorado.exercicio8();
+        //TesteCarroAprimorado.exercicio10();
+        //TesteDataAprimorada.exercicio11();
     }
 }
