@@ -18,5 +18,6 @@ public class Executador {
         //TesteFuncionarioAprimorado.exercicio8();
         //TesteCarroAprimorado.exercicio10();
         //TesteDataAprimorada.exercicio11();
+        TesteHeartRates.exercicio12();
     }
 }
