@@ -40,6 +40,11 @@ public class Usuario {
     public int getIdade(){
         return 2026 - ano;
     }
-    
+    public void mostrarDados(){
+        System.out.println("Nome: " +this.getNome());
+        System.out.println("Sobrenome: " +this.getSobrenome());
+        System.out.println("Data de nascimento: " +this.getDia()+ "/ "+this.getMes()+ "/ " +this.getAno());
+        System.out.println("Idade: " +this.getIdade());
+    }
     
 }

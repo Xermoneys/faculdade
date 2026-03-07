@@ -10,7 +10,7 @@ package br.edu.mavenproject1.Ex1;
  */
 public class HeartRates {
     private Usuario usuario;
-    
+  
     public HeartRates(Usuario usuario){
         this.usuario = usuario;
     }
@@ -23,5 +23,9 @@ public class HeartRates {
     }
     public double maxFreq(){
         return maxHeartRate() * 0.85;
+    }
+    public void mostrarDados(){
+         System.out.println("Frequencia cardiaca maxima: " +this.maxHeartRate());
+         System.out.printf("Frequencia cardiaca alvo: %.2f - %.2f%n", this.minFreq(),this.maxFreq());
     }
 }

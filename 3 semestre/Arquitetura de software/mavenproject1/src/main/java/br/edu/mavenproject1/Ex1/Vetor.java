@@ -6,14 +6,8 @@ package br.edu.mavenproject1.Ex1;
 
 /**
  *
- * @author lucia
+ * @author feisplmonegatto
  */
-public class TesteHeartRates {
-    public static void exercicio12(){
-    Usuario u = new Usuario("Luciano","Ventura",24,9,2004);
-    HeartRates hr = new HeartRates(u);
+public class Vetor {
     
-    u.mostrarDados();
-    hr.mostrarDados();
-    }
 }
