@@ -19,6 +19,7 @@ public class Executador {
         //TesteCarroAprimorado.exercicio10();
         //TesteDataAprimorada.exercicio11();
         //TesteHeartRates.exercicio12();
+        TesteContaCorrente.exercicio13();
         
     /**Usuario n[] = new Usuario[6];
     n[0] = new Usuario("Luciano","Ventura",24,9,2004);
@@ -44,19 +45,45 @@ public class Executador {
         System.out.println();
     }
     * **/   
-    /* ArrayList<String> s1 = new ArrayList<>();
+     ArrayList<String> s1 = new ArrayList<>();
+        s1.add("Azul");
         s1.add("Rosa");
         s1.add("Vermelho");
-        s1.add("Azul");
         
         ArrayList<String> s2 = new ArrayList<>();
         s2.add("Azul");
         s2.add("Rosa");
         s2.add("Vermelho");
-        s2.add("Rosa");
+        
         
         System.out.println(s1.equals(s2));
-        */
+        System.out.println(comparaArrayLists(s1, s2));
     
+    }
+    /**
+     * Funcao para comparar dois ArrayLists.
+     * Os objetos podem de qualquer classe
+     * @param l1 (ArrayList): ArrayList com objetos de qualquer classe
+     * @param l2 (ArrayList): ArrayList com objetos de qualquer classe
+     * @return (boolean) verdadeiro se l1 e l2 sao iguais, false caso contrario
+     */
+    public static boolean comparaArrayLists(ArrayList l1,ArrayList l2){
+
+        if(l1.size() != l2.size()){
+            return false;
+        }
+        
+        for(Object ob: l1){
+            if(!l2.contains(ob)){
+                return false;
+            }
+        }
+        
+        for(Object ob: l2){
+            if(!l1.contains(ob)){
+                return false;
+            }
+        }
+        return true;
     }
 }
