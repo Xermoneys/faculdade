@@ -11,15 +11,15 @@ import java.util.ArrayList;
 public class Executador {
     public static void main(String[] args){
         //TestePessoa.exercicio1();
-        //Retangulo.exercicio3();
-        //TesteFuncionario.exercicio5();
-        //TesteInvoice.exercicio6(); 
+        //Retangulo.Retangulo.exercicio3();
+        //Funcionario.TesteFuncionario.exercicio5();
+        //Invoice.TesteInvoice.exercicio6(); 
         //TestePerfil.exercicio7();
-        //TesteFuncionarioAprimorado.exercicio8();
-        //TesteCarroAprimorado.exercicio10();
-        //TesteDataAprimorada.exercicio11();
-        //TesteHeartRates.exercicio12();
-        TesteContaCorrente.exercicio13();
+        //Funcionario.TesteFuncionarioAprimorado.exercicio8();
+        //CarroAprimorado.TesteCarroAprimorado.exercicio10();
+        //Data.TesteDataAprimorada.exercicio11();
+        //HeartRates.TesteHeartRates.exercicio12();
+        ContaCorrente.TesteContaCorrente.exercicio13();
         
     /**Usuario n[] = new Usuario[6];
     n[0] = new Usuario("Luciano","Ventura",24,9,2004);
@@ -45,7 +45,8 @@ public class Executador {
         System.out.println();
     }
     * **/   
-     ArrayList<String> s1 = new ArrayList<>();
+     /*
+    ArrayList<String> s1 = new ArrayList<>();
         s1.add("Azul");
         s1.add("Rosa");
         s1.add("Vermelho");
@@ -58,7 +59,17 @@ public class Executador {
         
         System.out.println(s1.equals(s2));
         System.out.println(comparaArrayLists(s1, s2));
-    
+        */
+        //System.out.println(Calculadora.PI);
+        //System.out.println(Calculadora.expo(2,3));
+        
+       /* ArrayList<Integer>inteiros = new ArrayList();
+        for(int i = 1; i <= 100; i++)
+            inteiros.add(i);
+        int soma = Calculadora.Somatoria(inteiros);
+        System.out.println(soma);
+        System.out.println(Calculadora.maior(inteiros));
+        */
     }
     /**
      * Funcao para comparar dois ArrayLists.
