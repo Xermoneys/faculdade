@@ -11,10 +11,15 @@ package codigoconstrutores;
 public class Pessoa {
     private String nome;
     private String sobrenome;
+    private String cpf;
     private int idade;
-    private final int dia;
-    private final int mes;
-    private final int ano;
+    private int dia;
+    private int mes;
+    private int ano;
+    
+    public Pessoa(){
+        
+    }
     
     public Pessoa(String nome, String sobrenome,
         int dia, int mes, int ano){
@@ -24,6 +29,14 @@ public class Pessoa {
         this.mes = mes >= 1 && mes <= 12 ? mes : 1;
         this.ano = ano >= 1900 && ano <= 2026 ? ano : 1900;
         this.idade = 2026 - this.ano;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
 
     public int getDia() {
@@ -54,13 +67,15 @@ public class Pessoa {
         this.sobrenome = sobrenome;
     }
     
-    
-
     public int getIdade() {
         return idade;
     }
     
-    public void mostraDadados(){
+    public void setIdade(int idade){
+        this.idade = idade;
+    }
+    
+    public void mostraDados(){
         System.out.println("--- Dados da Pessoa ---");
         System.out.println("Nome:\t" + this.getNome());
         System.out.println("Idade:\t" + this.getIdade());

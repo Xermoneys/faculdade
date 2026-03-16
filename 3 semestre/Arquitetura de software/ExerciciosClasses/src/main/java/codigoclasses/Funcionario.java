@@ -28,6 +28,15 @@ public class Funcionario {
     }
     
     // composicao
+    /**
+     * Construtor por composicao
+     * @param nome nome a ser setado
+     * @param sobrenome sobrenome a ser setado
+     * @param salarioMensal
+     * @param agencia
+     * @param nroConta
+     * @param valorConta 
+     */
     public Funcionario(String nome, String sobrenome,
             double salarioMensal, String agencia,
             String nroConta, double valorConta){

@@ -11,6 +11,8 @@ import java.util.ArrayList;
  * @author andrezanon
  */
 public class Matematica {
+    public static final double PI = 3.1415;
+    
     public static int potencia(int x, int y){
         if(y == 0){
             return 1;

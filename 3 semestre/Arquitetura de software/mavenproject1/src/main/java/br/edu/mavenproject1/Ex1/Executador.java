@@ -4,6 +4,12 @@
  */
 package br.edu.mavenproject1.Ex1;
 import java.util.ArrayList;
+import Credito.Credito;
+import Credito.Pix;
+import Area.Retangular;
+import Area.Triangular;
+import Area.Circular;
+import Area.Formato;
 /**
  *
  * @author lucia
@@ -19,7 +25,8 @@ public class Executador {
         //CarroAprimorado.TesteCarroAprimorado.exercicio10();
         //Data.TesteDataAprimorada.exercicio11();
         //HeartRates.TesteHeartRates.exercicio12();
-        ContaCorrente.TesteContaCorrente.exercicio13();
+        //ContaCorrente.TesteContaCorrente.exercicio13();
+       
         
     /**Usuario n[] = new Usuario[6];
     n[0] = new Usuario("Luciano","Ventura",24,9,2004);
@@ -70,6 +77,25 @@ public class Executador {
         System.out.println(soma);
         System.out.println(Calculadora.maior(inteiros));
         */
+       
+      /* Credito pgto = new Credito(100.00, 3, 123456, 1, 2030, 123);
+        pgto.realizaPagamento();
+        
+        System.out.println();
+        
+        Pix pgtoPix = new Pix(100.00);
+        pgtoPix.realizaPagamento();
+        */
+        /*
+        Circular c1 = new Circular(10.5, 10);
+        System.out.println(c1.calculaPreco());
+        
+        Retangular r1 = new Retangular(10.5, 15, 10);
+        System.out.println(r1.calculaPreco());
+        
+        Triangular t1 = new Triangular(10.5, 15, 10);
+        System.out.println(t1.calculaPreco());
+       */
     }
     /**
      * Funcao para comparar dois ArrayLists.

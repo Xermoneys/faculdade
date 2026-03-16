@@ -4,23 +4,27 @@
 
 package br.edu.fei.exerciciosclasses;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Scanner;
+
 import codigoclasses.ContaBancaria;
 import codigoclasses.ContaFuncionario;
-import java.util.Scanner;
-import codigoclasses.Pessoa;
-import codigoclasses.Swapper;
-import codigoclasses.Terreno;
-import codigoclasses.Televisao;
 import codigoclasses.Funcionario;
 import codigoclasses.PerfilDeSaude;
+import codigoclasses.Swapper;
+import codigoclasses.Televisao;
+import codigoclasses.Terreno;
+import codigoconstrutores.Calculadora;
 import codigoconstrutores.Data;
-import codigoconstrutores.HeartRates;
 import codigoconstrutores.Laser;
 import codigoconstrutores.Matematica;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.List;
+import codigoconstrutores.Pessoa;
+import codigoheranca.Circular;
+import codigoheranca.Credito;
+import codigoheranca.Pix;
+import codigoheranca.Retangular;
+import codigoheranca.Triangular;
 
 /**
  *
@@ -45,7 +49,7 @@ public class ExerciciosClasses {
         p1.setCpf(cpf);
         p1.setIdade(idade);
         
-        p1.mostraDadados();
+        p1.mostraDados();
     }
     
     public static void exercicio2(){
@@ -248,8 +252,8 @@ public class ExerciciosClasses {
     }
     
     public static void heartRates(){
-        HeartRates hr = new HeartRates("Feiano", "Palmeirense", 02, 03, 1993);
-        hr.mostraDados();
+        //HeartRates hr = new HeartRates("Feiano", "Palmeirense", 02, 03, 1993);
+        //hr.mostraDados();
     }
     
     /**
@@ -355,7 +359,147 @@ public class ExerciciosClasses {
         System.out.println(s1.equals(s2));
         System.out.println(comparaArrayLists(s1, s2));
     }
-   
+    
+    public static void exercicioStatic(){
+        System.out.println(Matematica.potencia(2, 4));
+        ArrayList<Integer> a = new ArrayList<>();
+        for(int i = 1; i <= 10; i++){
+            a.add(i);
+        }
+        System.out.println(Matematica.somatoria(a));
+    }
+    
+    public static boolean comparandoArrays(ArrayList l1, 
+            ArrayList l2){
+        for(Object s1 : l1){
+            if (!l2.contains(s1)){
+                return false;
+            }
+        }
+        
+        for(Object s2: l2){
+            if(!l1.contains(s2)){
+                return false;
+            }
+        }
+        
+        return true;
+    }
+    
+    /**
+     * Codigo que copia um ArrayList e o retorna
+     * @param l ArrayList de pessoas 
+     * @return copia do ArrayList l
+     */
+    public static ArrayList<Pessoa> copiaArrayList(ArrayList <Pessoa> l){
+        ArrayList <Pessoa> copia = new ArrayList();
+        Iterator <Pessoa> it = l.iterator();
+        while(it.hasNext()){
+            copia.add(it.next());
+        }
+        return copia;  
+    }
+    
+    public static void exrciciosArrayList2(){
+        
+        ArrayList<Pessoa> pessoas = new ArrayList();
+        pessoas.add(new Pessoa("Feiano", "Palmeirense", 23, 01, 1993));
+        pessoas.add(new Pessoa("Joao", "de Moema", 10, 02, 1997));
+        pessoas.add(new Pessoa("Joaquin", "de Vila Mariana", 01, 12, 2000));
+        pessoas.add(new Pessoa("Joaquina", "de Tatuape", 01, 12, 2000));
+        pessoas.add(new Pessoa("Jorge", "da Aclimacao", 10, 02, 2002));
+        
+        ArrayList<Pessoa> copia3 = (ArrayList<Pessoa>) pessoas.clone();
+        for(Pessoa p : copia3){
+            p.mostraDados();
+        }
+        
+        Pessoa n[] = new Pessoa[6];
+        n[0] = new Pessoa("Feiano", "Palmeirense", 23, 01, 1993);
+        n[1] = new Pessoa("Joao", "de Moema", 10, 02, 1997);
+        n[2] = new Pessoa("Maria", "de Itaquera", 05, 12, 2001);
+        n[3] = new Pessoa("Joaquin", "de Vila Mariana", 01, 12, 2000);
+        n[4] = new Pessoa("Joaquina", "de Tatuape", 01, 12, 2000);
+        n[5] = new Pessoa("Jorge", "da Aclimacao", 10, 02, 2002);
+        
+        ArrayList<Pessoa> pessoas2 = new ArrayList();
+        pessoas2.add(new Pessoa("Feiano", "Palmeirense", 23, 01, 1993));
+        pessoas2.add(new Pessoa("Joao", "de Moema", 10, 02, 1997));
+        pessoas2.add(new Pessoa("Joaquin", "de Vila Mariana", 01, 12, 2000));
+        pessoas2.add(new Pessoa("Joaquina", "de Tatuape", 01, 12, 2000));
+        pessoas2.add(new Pessoa("Jorge", "da Aclimacao", 10, 02, 2002));
+        
+        System.out.println(pessoas2.size());
+        System.out.println(pessoas2.get(3).getNome());
+        
+        for(Pessoa p : pessoas2){
+            p.mostraDados();
+        }
+        
+        for(int i = 0; i < n.length; i++){
+            n[i].mostraDados();
+        }
+        
+        Iterator <Pessoa> it = pessoas.iterator();
+        while(it.hasNext()){
+            Pessoa p = it.next();
+            p.mostraDados();
+        }
+        
+        System.out.println("--- Cores ---");
+        ArrayList<String> s1 = new ArrayList<>();
+        s1.add("Rosa");
+        s1.add("Azul"); 
+        s1.add("Vermelho");  
+        
+        ArrayList<String> s2 = new ArrayList<>();
+        s2.add("Azul");
+        s2.add("Rosa");
+        s2.add("Vermelho");
+        s2.add("Rosa");
+        
+        System.out.println(s1.equals(s2));
+        System.out.println(comparandoArrays(s1, s2));
+        s1.remove("Vermelho");
+        System.out.println(s2.contains("Vermelho"));
+        s1.clear();
+        System.out.println(s1.size());
+        //System.out.println(comparaArrayLists(s1, s2));
+        
+        ArrayList<Pessoa> pessoas3 = new ArrayList();
+        pessoas3.add(new Pessoa("Feiano", "Palmeirense", 23, 01, 1993));
+        pessoas3.add(new Pessoa("Joao", "de Moema", 10, 02, 1997));
+        pessoas3.add(new Pessoa("Joaquin", "de Vila Mariana", 01, 12, 2000));
+        pessoas3.add(new Pessoa("Joaquina", "de Tatuape", 01, 12, 2000));
+        pessoas3.add(new Pessoa("Jorge", "da Aclimacao", 10, 02, 2002));
+        
+        ArrayList <Pessoa> copia = 
+                (ArrayList <Pessoa>)pessoas3.clone();
+        
+        for(Pessoa p : copia){
+            p.mostraDados();
+        }
+        
+        ArrayList <Pessoa> copia2 = copiaArrayList(pessoas);
+        
+        for(int i = 0; i < copia2.size(); i++){
+            Pessoa p = copia2.get(i);
+            p.mostraDados();
+        }
+        
+        System.out.println(Calculadora.PI);
+        System.out.println(Calculadora.expo(2, 3));
+        ArrayList<Integer> inteiros = new ArrayList();
+        for(int i = 1; i <= 100; i++)
+            inteiros.add(i);
+        
+        int soma = Calculadora.somatoria(inteiros);
+        System.out.println(soma);
+        
+        System.out.println(Calculadora.maior(inteiros));
+        
+    }
+    
     public static void main(String[] args) {
         //exercicio1();        
         //exercicio2();
@@ -363,12 +507,26 @@ public class ExerciciosClasses {
         //exercicio4();
         //exercicio5();
         //exercicioConstrutores1();
-        System.out.println(Matematica.potencia(2, 4));
-        ArrayList<Integer> a = new ArrayList<>();
-        for(int i = 1; i <= 10; i++){
-            a.add(i);
-        }
-        System.out.println(Matematica.somatoria(a));
+        //exercicioStatic()
+        
+        
+        Credito pgto = new Credito(100.00, 3, 123456, 1, 2030, 123);
+        pgto.realizaPagamento();
+        
+        System.out.println();
+        
+        Pix pgtoPix = new Pix(100.00);
+        pgtoPix.realizaPagamento();
+        
+                
+        Circular c1 = new Circular(10.5, 10);
+        System.out.println(c1.calculaPreco());
+        
+        Retangular r1 = new Retangular(10.5, 15, 10);
+        System.out.println(r1.calculaPreco());
+        
+        Triangular t1 = new Triangular(10.5, 15, 10);
+        System.out.println(t1.calculaPreco());
     }
     
 }

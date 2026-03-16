@@ -9,7 +9,7 @@ package codigoconstrutores;
  * @author andrezanon
  */
 public class HeartRates {
-    Pessoa pessoa;
+    private Pessoa pessoa;
     
     public HeartRates(String nome, String sobrenome,
         int dia, int mes, int ano){
@@ -36,7 +36,7 @@ public class HeartRates {
     }
     
     public void mostraDados(){
-        this.getPessoa().mostraDadados();
+        this.getPessoa().mostraDados();
         System.out.println("--- Dados de Frequencia Cardiaca ---");
         System.out.printf("Frequencia Maxima: %d\n", this.freqMaxima());
         System.out.printf("Frequencia Alvo [%d-%d]\n", this.freqAlvoMin(),

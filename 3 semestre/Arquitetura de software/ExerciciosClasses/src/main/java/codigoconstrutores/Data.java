@@ -25,6 +25,20 @@ public final class Data {
         this.mes = this.mesStringParaInt(mes);
         this.ano = ano;
     }
+
+    public void setDia(int dia) {
+        this.dia = dia;
+    }
+
+    public void setMes(int mes) {
+        this.mes = mes;
+    }
+
+    public void setAno(int ano) {
+        this.ano = ano;
+    }
+    
+    
     
     public int getDia(){
         return this.dia;
