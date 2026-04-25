@@ -1,0 +1,4 @@
+br\edu\fei\screen\Screen.class
+br\edu\fei\model\Calculadora.class
+br\edu\fei\controller\CalculadoraController.class
+br\edu\fei\screen\Form.class
