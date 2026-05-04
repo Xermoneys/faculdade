@@ -7,6 +7,7 @@ package br.edu.sistemaacademico.model.dao;
 import br.edu.sistemaacademico.model.Aluno;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
@@ -23,13 +24,27 @@ public class AlunoDAO {
     public void insere(Aluno aluno) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-   public void inserir(Aluno aluno) throws SQLException{
-        String sql = "INSERT INTO tabela_nova(nome, usuario, senha) "
-        + "values('"+ aluno.getNome() +"', '"+ aluno.getUsuario()+ ", '"
-        + ", '"+ aluno.getSenha() +"')";
+   public void inserir(Aluno aluno) throws SQLException {
+        String sql = "INSERT INTO tabela_nova(nome, usuario, senha) VALUES (?, ?, ?)";
+
         PreparedStatement statement = conn.prepareStatement(sql);
+        statement.setString(1, aluno.getNome());
+        statement.setString(2, aluno.getUsuario());
+        statement.setString(3, aluno.getSenha());
+
         statement.execute();
-        System.out.println("Informacao inserida na tabela com sucesso!");
-        conn.close(); 
-   }
+
+        System.out.println("Informacao inserida com sucesso!");
+
+        conn.close(); // ✔️ mantém padrão do professor
 }
+   public ResultSet consultar(Aluno aluno) throws SQLException {
+        String sql = "SELECT * FROM tabela_nova WHERE usuario = ? AND senha = ?";
+        PreparedStatement statement = conn.prepareStatement(sql);
+        statement.setString(1, aluno.getUsuario());
+        statement.setString(2, aluno.getSenha());
+
+        return statement.executeQuery(); // não fecha aqui
+}
+}
+
