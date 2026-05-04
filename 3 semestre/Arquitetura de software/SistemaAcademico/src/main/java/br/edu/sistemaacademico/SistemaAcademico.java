@@ -28,7 +28,7 @@ public class SistemaAcademico {
         cadastroView.setController(controller);
         loginView.setController(controller);
         
-        loginView.setVisible(true);
+        cadastroView.setVisible(true);
 
     } catch (SQLException e) {
         e.printStackTrace();
