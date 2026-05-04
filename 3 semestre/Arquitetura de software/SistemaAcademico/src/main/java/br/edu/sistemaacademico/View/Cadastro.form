@@ -50,10 +50,13 @@
                               <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="TfNome" min="-2" pref="195" max="-2" attributes="0"/>
                               <Component id="TfUsuario" min="-2" pref="195" max="-2" attributes="0"/>
-                              <Component id="TfSenha" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="TfSenha" max="32767" attributes="0"/>
+                                  <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
@@ -139,9 +142,9 @@
           </Events>
         </Component>
         <Component class="javax.swing.JPasswordField" name="TfSenha">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="tfsenha"/>
-          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TfSenhaActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

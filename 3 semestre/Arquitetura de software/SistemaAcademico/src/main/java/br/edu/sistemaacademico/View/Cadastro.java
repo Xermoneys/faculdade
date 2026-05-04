@@ -64,7 +64,7 @@ public class Cadastro extends javax.swing.JFrame {
         jButton1.setText("Cadastrar");
         jButton1.addActionListener(this::jButton1ActionPerformed);
 
-        TfSenha.setText("tfsenha");
+        TfSenha.addActionListener(this::TfSenhaActionPerformed);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -80,10 +80,12 @@ public class Cadastro extends javax.swing.JFrame {
                                 .addComponent(jLabel1))
                             .addComponent(jLabel3))
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(TfNome, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(TfUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TfSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(TfSenha)
+                                .addGap(76, 76, 76))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(161, 161, 161)
                         .addComponent(jLabel4))
@@ -139,6 +141,10 @@ public class Cadastro extends javax.swing.JFrame {
     private void TfNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TfNomeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TfNomeActionPerformed
+
+    private void TfSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TfSenhaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TfSenhaActionPerformed
 
     /**
      * @param args the command line arguments

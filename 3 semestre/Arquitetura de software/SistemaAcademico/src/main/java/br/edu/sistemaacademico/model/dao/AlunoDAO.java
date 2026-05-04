@@ -29,6 +29,7 @@ public class AlunoDAO {
         + ", '"+ aluno.getSenha() +"')";
         PreparedStatement statement = conn.prepareStatement(sql);
         statement.execute();
+        System.out.println("Informacao inserida na tabela com sucesso!");
         conn.close(); 
    }
 }

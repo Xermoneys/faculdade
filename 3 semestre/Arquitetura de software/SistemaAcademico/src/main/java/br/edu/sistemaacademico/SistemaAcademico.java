@@ -6,7 +6,6 @@ package br.edu.sistemaacademico;
 
 import br.edu.sistemaacademico.View.Cadastro;
 import br.edu.sistemaacademico.controller.Controller;
-import br.edu.sistemaacademico.model.dao.Conexao;
 import java.sql.SQLException;
 
 /**
