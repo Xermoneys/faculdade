@@ -9,7 +9,7 @@ import java.util.List;
  *
  * @author lucia
  */
-public class Main {
+public class main {
      public static void main(String[] args) {
 
         Personagem guerreiro = new Guerreiro(

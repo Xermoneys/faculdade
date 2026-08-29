@@ -36,7 +36,7 @@ public class AlunoDAO {
 
         System.out.println("Informacao inserida com sucesso!");
 
-        conn.close(); // ✔️ mantém padrão do professor
+        conn.close(); 
 }
    public ResultSet consultar(Aluno aluno) throws SQLException {
         String sql = "SELECT * FROM tabela_nova WHERE usuario = ? AND senha = ?";
@@ -44,7 +44,7 @@ public class AlunoDAO {
         statement.setString(1, aluno.getUsuario());
         statement.setString(2, aluno.getSenha());
 
-        return statement.executeQuery(); // não fecha aqui
+        return statement.executeQuery(); 
 }
 }
 
