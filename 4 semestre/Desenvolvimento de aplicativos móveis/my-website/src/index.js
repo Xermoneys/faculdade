@@ -7,7 +7,7 @@ function App(){
     return (
         <div>
                 <Titulo/>
-                <Cabeçalho/>
+                <Cabecalho/>
                 <Introduçao/>
                 <Livros/>
                 <VideoFEI/>
@@ -31,7 +31,7 @@ function Titulo(){
     return <p style={titulo}>APRENDENDO REACT PARA DESENVOLVIMENTO WEB</p>
         
     }
-function Cabeçalho(){
+function Cabecalho(){
     const cabeçalho = {
         display: 'flex',
         color: "darkred",
