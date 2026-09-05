@@ -4,10 +4,6 @@ function Botao({ display, onClick }) {
   const estilo = {
     width: "70px",
     height: "60px",
-    margin: "4px",
-    fontWeight: "bold",
-    fontSize: "20px",
-    cursor: "pointer"
   };
 
   return (
@@ -30,9 +26,9 @@ function Calculadora() {
     }
   }
 
-  function selecionarOperacao(op) {
+  function selecionarOperacao(operacao) {
     setNumero1(parseFloat(display));
-    setOperacao(op);
+    setOperacao(operacao);
     setDisplay("0");
   }
 
@@ -50,10 +46,10 @@ function Calculadora() {
       resultado = numero1 * numero2;
     } 
     else if (operacao === "/") {
-      resultado = numero2 !== 0
+      resultado = numero1 / numero2;
     }
 
-    setDisplay(String(resultado));
+    setDisplay(parseFloat(resultado));
     setNumero1("");
     setOperacao("");
   }
@@ -69,13 +65,12 @@ function Calculadora() {
       <h1>Calculadora</h1>
       <div style={{
           width: "280px",
-          height: "60px",
+          height: "50px",
           border: "1px solid black",
-          marginBottom: "10px",
+          marginBottom: "8px",
           fontSize: "30px",
           textAlign: "right",
-          padding: "10px",
-          boxSizing: "border-box"
+          padding: "6px",
         }}
       >
         {display}
